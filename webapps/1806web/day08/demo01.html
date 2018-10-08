@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn(){
+		var input = document.getElementById("input1");
+		var sp = document.getElementById("input2");
+		
+		var i = input.value;
+		var s = sp.value;
+		var inputs = i.split(s);
+		
+		for(var i=1;i<=inputs.length;i++){
+			document.body.innerHTML+="<h"+i+">"+inputs[i-1]+"</h"+i+">"
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input1">
+	<input type="text" id="input2">
+	<input type="button" value="分割！" onclick="fn()">
+</body>
+</html>

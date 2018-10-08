@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>伪类选择器</title>
+<!-- 用于设置元素的不同显示状态时的效果
+	例如：
+	-鼠标悬停:hover 用于设置鼠标停留在元素上面时候的显示效果
+	
+	 -->
+<style type="text/css">
+#list li:hover{
+	color: #fff;
+	background-color: #000;
+}
+
+a:link{color:blue}
+a:visited{color:red}
+a:hover{color:pink}
+a:active {color: DeepPink }
+
+input{ border: 1px solid #ddd;}
+/* 设置输入框获得焦点时的效果 */
+input:focus{
+	 border: 1px solid red;
+ 	 background-color: HoneyDew ;	
+  }
+  
+.btn{
+	border:2px outset #ddd;	/* 凸起边框 */
+	background-color: #eee;	/* 背景色 */
+	text-align:center;		/* 文字居中 */
+	cursor:pointer;
+	width:50px;
+}
+.btn:active{
+	border:2px inset #ddd;
+}
+
+</style>
+</head>
+<body>
+	<h1>伪类选择器</h1>
+	<h2>翻牌子</h2>
+	<ul id="list"  align="center">
+		<li style="color:white">范传奇</li>
+		<li style="color:white">刘国斌</li>
+		<li style="color:white">成恒</li>
+		<li style="color:white">王克晶</li>
+	</ul>
+	<div  align="center"><a href="http://www.baidu.com" target="_blank">百度一下</a></div>
+	
+	<hr>
+	<h1 >伪类选择器2</h1>
+	<h2 >表单</h2>
+	<div >
+		<label>用户</label>
+		<input type="text" >
+	</div>
+	<div >
+		<label>电话</label>
+		<input type="text">
+	</div>
+	<div >
+		<label>年龄</label>
+		<input type="text">
+	</div>
+	
+	<div align="center" class="btn" >按钮</div>
+	
+	
+	
+</body>
+</html>

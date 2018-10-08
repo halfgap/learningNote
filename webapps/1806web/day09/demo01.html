@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border: 1px solid red;
+		width: 50px;
+		border-spacing: 0;
+	}
+	div{
+		border : 1px solid red;
+		width:100px;
+		height: 100px;
+		margin : 0;
+		padding: 0;
+	}
+	td{
+		padding: 0;
+	}
+</style>
+<script type="text/javascript">
+	function fn(){
+		
+		var table = document.createElement("table");
+		for(var i=0;i<input1.value;i++){
+			var tr = document.createElement("tr");
+			for(var j=0;j<input2.value;j++){
+				var td = document.createElement("td");
+				var div = document.createElement("div");
+				td.appendChild(div);
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+		}
+		document.body.appendChild(table);
+	}
+</script>
+</head>
+<body>
+	<input type="text" placeholder="行" id="input1">
+	<input type="text" placeholder="列" id="input2">
+	<br>
+	<input type="button" value="生成" onclick="fn()">
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>通过标签的name值查找</title>
+<script type="text/javascript">
+	function fn(){
+		var str = "";
+		var arr = document.getElementsByName("hobby");
+		for(var i=0;i<arr.length;i++){
+			var h = arr[i];
+			if(h.checked){
+				str += h.value;
+			}
+		}
+		var h1 = document.createElement("h1");
+		h1.innerText = str;
+		document.body.appendChild(h1);
+	}
+</script>
+</head>
+<body>
+<input type="checkbox" name="hobby" value="kp">看片
+<input type="checkbox" name="hobby" value="kdy">看电影
+<input type="checkbox" name="hobby" value='kdn'>看电脑
+<input type="button" value="选择" onclick="fn()">
+<div class="big"></div>
+<div class="big">
+	<div class="small"></div>
+</div>
+</body>
+</html>

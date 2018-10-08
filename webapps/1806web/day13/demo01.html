@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>修改</title>
+<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid red;
+	}
+	#h{
+		color: #DC143C;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	
+	function stylefn(){
+		$("div").css({"font-size":"44px","color":"yellow","background-color":"red"});
+		alert("宽度:"+$("div").css("width"));
+	}
+	
+	function attributefn(){
+		$("h1").attr("id","h");
+		alert("ID:"+$("h1").attr("id"));
+	} 
+	
+	function textfn(){
+		$("div").text("✪");
+		alert($("div").text());
+	}
+	function htmlfn(){
+		$("div").html("<h3>☯</h3>");
+		alert($("div").html());
+	}
+</script>
+
+</head>
+<body>
+	<input type="button" value="修改样式" onclick="stylefn()">
+	<input type="button" value="修改属性" onclick="attributefn()">
+	<input type="button" value="设置文本" onclick="textfn()">
+	<input type="button" value="设置HTML" onclick="htmlfn()">
+	<div>☭</div>
+	<h1>Сегодня последний день на прошлой неделе, Ула!</h1>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

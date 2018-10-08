@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mysql02</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>课程回顾：</h3>
+<ul>
+<li>数据库相关SQL</li>
+<li>创建数据库 create database db1;</li>
+<li>查询所有 show databases;</li>
+<li>查看详情 show create database db1;</li>
+<li>指定字符集 create database db1 character set utf8/gbk;</li>
+<li>删除 drop database db1;</li>
+<li>使用  use db1;</li>
+<li>表相关SQL</li>
+<li>创建表  create table t1(name varchar(10),age int);</li>
+<li>查看所有 show tables;</li>
+<li>查看详情 show create table t1;</li>
+<li>查看表字段  desc t1;</li>
+<li>指定引擎和字符集 create table t1(name varchar(10),age int) engine=myisam/innodb charset=gbk/utf8;</li>
+<li>删除 drop table t1;</li>
+<li>修改名 rename table t1 to t2;</li>
+<li>修改引擎字符集 alter table t1 engine=myisam/innodb charset=gbk/utf8;</li>
+<li>添加字段 alter table t1 add age int first/after xxx;</li>
+<li>删除字段 alter table t1 drop age;</li>
+<li>修改字段名和类型 alter table t1 change age xxx 类型;</li>
+<li>修改类型和位置 alter table t1 modify age 类型 first/after xxx;</li>
+<li>数据相关</li>
+<li>插入数据 insert into t1 (name,age) values(值1,值2),(值1,值2),(值1,值2);</li>
+<li>查询数据  select * from t1 where age&lt;50;</li>
+<li>
+删除数据 
+-格式：delete from 表名 where age=10;
+-删除表中所有数据： delete from 表名;
+delete from hero where age=20;
+delete from hero where name='悟空';
+</li>
+<li>
+修改数据
+-格式：update 表名 set name='Tom' where age=20;
+update hero set age=100 where name='八戒';
+update hero set age=50;
+</li>
+</ul>
+<h3>练习题：</h3>
+<ol>
+<li>
+创建数据库db2 指定字符集为utf8
+create database db2 character set utf8;
+use db2;
+</li>
+<li>
+创建t<em>emp员工表 有id 整数,name 字符串, 两个字段
+create table t</em>emp(id int,name varchar(10));
+</li>
+<li>
+修改t<em>emp 为 emp
+rename table t</em>emp to emp;
+</li>
+<li>
+添加 工资(sal)字段类型为整数在最后面，在工资前面添加年龄字段
+alter table emp add sal int;
+alter table emp add age int after name;
+</li>
+<li>
+添加以下数据 1 诸葛亮 30 5000 ；2 刘备 25 8000；3 小乔 18 3000
+insert into emp values(1,'诸葛亮',30,5000),(2,'刘备',25,8000),(3,'小乔',18,3000);
+</li>
+<li>
+修改年龄小于20岁的工资为800
+update emp set sal=800 where age&lt;20;
+</li>
+<li>
+修改诸葛亮为周瑜
+update emp set name='周瑜' where name='诸葛亮';
+</li>
+<li>
+删除工资高于5000的员工
+delete from emp where sal&gt;5000;
+</li>
+<li>
+删除所有数据
+delete from emp;
+</li>
+<li>
+删除emp表
+drop table emp;
+</li>
+</ol>
+<h3>主键约束</h3>
+<ul>
+<li>什么是主键：表示表中数据唯一性的字段称为主键</li>
+<li>
+添加主键约束的字段，值唯一且非空。
+-格式： create table emp(id int primary key,name varchar(10));
+insert into emp values(1,'Tom');//成功
+insert into emp values(2,'Jerry');//成功
+insert into emp values(1,'abc');//失败 id不能重复
+insert into emp values(null,'abc');//失败 主键不能为null
+</li>
+</ul>
+<h3>主键+自增</h3>
+<pre><code>-格式：create table t1(id int primary key auto_increment,name varchar(10));
+insert into t1 values(null,'刘备');
+insert into t1 values(null,'刘备');
+
+insert into t1 values(10,'张飞');
+</code></pre>
+
+<ol>
+<li>当自增字段的值为null时会自动赋值并且数值+1</li>
+<li>可以指定赋值</li>
+<li>自增数值只增不减 不会因为删除数据而减少</li>
+<li>在表中曾出现过的最大值的基础上+1</li>
+</ol>
+<h3>注释 comment</h3>
+<pre><code>-格式：create table t2(id int primary key auto_increment comment '这是id表示唯一性', name varchar(10) comment '这是名字', sal int comment '这是工资');
+-查看方式： show create table t2;
+</code></pre>
+
+<h3>`和' 的区别</h3>
+<ul>
+<li>`是用来修饰表名和字段名的  可以省略</li>
+<li>' 是用来修饰字符串的</li>
+</ul>
+<h3>数据冗余</h3>
+<ul>
+<li>什么是冗余：如果表设计不够合理，随着数据量的增多，可能会出现大量的重复数据，这种重复数据成为数据冗余，可以通过拆分多个表的形式解决此问题</li>
+<li>
+练习1：请设计表保存以下数据
+<ol>
+<li>电视机分类下的康佳电视价格3000库存100个</li>
+<li>电视机分类下的惠普电视价格8000库存800个</li>
+<li>手机分类下的iphone x 价格6000 库存5个</li>
+<li>手机分类下的华为 价格3000 库存10个</li>
+</ol>
+</li>
+<li>
+分类表category（id,name） 
+create table category(id int primary key auto_increment,name varchar(10));
+</li>
+<li>
+商品表item(id,name,price,num,cid)
+create table item(id int primary key auto_increment,name varchar(10),price int,num int,cid int);
+</li>
+<li>
+<p>插入数据
+insert into category values(null,'电视机'),(null,'手机');
+insert into item values(null,'康佳',3000,100,1),(null,'惠普',8000,800,1),(null,'iPhone X',6000,5,2),(null,'华为',3000,10,2);</p>
+</li>
+<li>
+<p>练习2：请设计表保存以下数据</p>
+</li>
+<li>java教学部的苍老师工资200年龄18</li>
+<li>java教学部的传奇老师工资300年龄20</li>
+<li>销售部的刘德华工资100年龄50</li>
+<li>人事部的张学友工资80年龄30</li>
+<li>
+创建部门表dept  id name
+create table dept(id int primary key auto_increment,name varchar(10));
+</li>
+<li>
+员工表emp  id name sal age deptid
+create table emp(id int primary key auto_increment,name varchar(10),sal int,age int,deptid int);
+</li>
+<li>
+插入数据	
+insert into dept values(null,'java教学部'),(null,'销售部'),(null,'人事部');
+insert into emp values(null,'苍老师',200,18,1),(null,'传奇老师',300,20,1),(null,'刘德华',100,50,2),(null,'张学友',80,30,3);
+</li>
+</ul>
+<h3>事务</h3>
+<ul>
+<li>
+创建人物表
+	create table person(id int primary key auto_increment,name varchar(10),money int);
+</li>
+<li>
+插入两条数据
+	insert into person values(null,'超人',500),(null,'钢铁侠',50000);
+</li>
+<li>
+<p>超人和钢铁侠借10000块钱</p>
+<ol>
+<li>
+让钢铁侠-10000
+update person set money=money-10000 where id=2;
+</li>
+<li>
+让超人+10000
+update person set money=money+10000 where id=1;
+</li>
+</ol>
+</li>
+<li>
+<p>什么是事务：事务是数据库中执行SQL语句的工作单元，可以保证事务内的SQL语句要么全部成功，要么全部失败。</p>
+</li>
+<li>如何使用事务：</li>
+<li>把数据库的自动提交改成手动提交，</li>
+<li>执行多条sql语句，此时SQL会在内存中执行 </li>
+<li>
+<p>当所有SQL在内存中执行完后 手动提交，把多次改动一次性提交到数据库文件中</p>
+</li>
+<li>
+<p>查看数据库自动提交的状态 
+show variables like '%autocommit%';</p>
+</li>
+<li>
+关闭和打开自动提交  0:关闭   1：开启
+set autocommit=0;
+</li>
+<li>验证事务的步骤：</li>
+<li>
+在A窗口中执行让钢铁侠-10000
+update person set money=money-10000 where id=2;
+</li>
+<li>此时在A窗口中执行select * from person 验证数据时被改掉的，但是此时显示的内容是内存中的数据</li>
+<li>打开新的B窗口执行select * from person 因为此时数据查询的是数据库文件中的数据，此时并没有发生改变</li>
+<li>
+在A窗口中执行让超人+10000
+update person set money=money+10000 where id=1;
+</li>
+<li>此时A窗口查询数据改变（内存中数据），B窗口数据没变（数据库文件中数据）</li>
+<li>回到A窗口执行commit; 手动提交，此时B窗口查询数据也发生了改变，因为A窗口中已经把两次内存中的改动提交到了数据库文件中。</li>
+</ul>
+<h4>为什么使用事务？</h4>
+<pre><code>当做某一件事需要执行多条SQL语句的时候（类似转账），如果不使用事务，则可能出现多条SQL部分成功部分失败，这样的结果会导致数据错乱，使用事务后可以保证多条SQL语句要么全部成功，要么全部失败。可以解决以上问题
+</code></pre>
+
+<h4>事务的执行流程？</h4>
+<pre><code>所谓开启事务实际上就是把数据库的自动提交关闭改成手动提交，在手动提交之前多次SQL语句的执行只会对内存中的数据进行更改，当提交的时候会把多次SQL的执行结果一次性提交到数据库文件中
+</code></pre>
+
+<h4>事务回滚</h4>
+<ul>
+<li>事务回滚会把内存中的数据回滚到上次提交的点</li>
+<li>设置回滚点： savepoint 标识;</li>
+<li>回滚到某个回滚点： rollback to 标识;</li>
+</ul>
+<h3>事务相关指令总结：</h3>
+<ol>
+<li>show variables like '%autocommit%';</li>
+<li>set autocommit=0/1;</li>
+<li>commit;</li>
+<li>rollback;</li>
+<li>savepoint s1;</li>
+<li>rollback to s1;</li>
+</ol>
+<h3>SQL分类</h3>
+<ol>
+<li>DDL：Data Definition Language 数据定义语言，包括：create,alter,drop,truncate。不支持事务</li>
+<li>DML：Data Manipulation Language 数据操作语言，包括：insert delete update 和 select(DQL)。支持事务</li>
+<li>DQL：Data Query Language 数据查询语言，只有select </li>
+<li>TCL：Transaction Control Language 事务控制语言，包括：commit，rollback，savepoint，rollback to xxx;</li>
+<li>DCL：Data Control Language 数据控制语言，分配用户权限相关的SQL</li>
+</ol>
+<h4>truncate</h4>
+<ul>
+<li>删除表并创建一个新表(空表)</li>
+<li>格式： truncate table 表名;</li>
+<li>truncate、drop、delete区别： 执行效率drop&gt;truncate&gt;delete, drop只是删除表，truncate是删除表并创建一个空表，delete只是删除数据自增数值不会清零</li>
+</ul>
+<h3>数据库的数据类型</h3>
+<ol>
+<li>
+整数： int(m)   bigint(m)  m代表显示长度  zerofill（零填充）
+create table t<em>int(num int(10) zerofill);
+insert into t</em>int values(123);
+</li>
+<li>
+浮点数： double(m,d) m代表总长度，d代表小数长度 
+	如：76.234  m=5 d=3; 
+</li>
+<li>decimal(m,d) 超高精度浮点数，涉及超高精度运算时使用。</li>
+<li>字符串</li>
+<li>char(n)： 固定长度   n=10   'abc' 占10 执行效率高，最大长度255</li>
+<li>varchar(n):可变长度  n=10  'abc' 占3 更节省空间，最大长度65535，超过255建议使用text。</li>
+<li>text: 可变长度 最大65535。</li>
+<li>日期类型</li>
+<li>date: 保存年月日</li>
+<li>time: 保存时分秒</li>
+<li>datetime： 保存年月日时分秒 默认值为null，最大值9999-12-31</li>
+<li>timestamp(时间戳)：保存年月日时分秒 默认值为当前时间，最大值2038-1-19 </li>
+<li>
+练习：
+create table t<em>date(d1 date,d2 time,d3 datetime,d4 timestamp);
+insert into t</em>date values('2018-03-18',null,null,null);
+insert into t_date values(null,'17:23:18','2018-05-15 12:18:33',null);
+</li>
+</ol>
+<h3>day01</h3>
+<ul>
+<li>数据库相关</li>
+<li>创建 create database db1;</li>
+<li>查询所有  show databases;</li>
+<li>查询详情  show create database db1;</li>
+<li>指定字符集 create database db1 character set gbk/utf8;</li>
+<li>使用  use db1;</li>
+<li>删除 drop database db1;</li>
+<li>表相关</li>
+<li>创建 create table t1(name varchar(10),age int);</li>
+<li>查询所有 show tables;</li>
+<li>详情  show create table t1;</li>
+<li>字段  desc t1;</li>
+<li>删除 drop table t1;</li>
+<li>create table t1(name varchar(10),age int) engine=myisam/innodb charset=gbk/utf8;</li>
+<li>修改表名 rename table  t1 to t2;</li>
+<li>修改表引擎字符集 alter table t1 engine=myisam/innodb charset=gbk/utf8;</li>
+<li>添加字段 alter table t1 add age int first/ after xxx;</li>
+<li>删除字段 alter table t1 drop age;</li>
+<li>修改字段名和类型 alter table t1 change age name varchar(10);</li>
+<li>修改类型和位置 alter table t1 modify age int first/after xxx;</li>
+<li>数据相关</li>
+<li>
+插入数据
+insert into t1 (name,age) values (值1,值2),(值1,值2),(值1,值2);
+</li>
+<li>查询  select * from t1;  select name,age from t1;</li>
+<li>删除数据 delete from t1 where id=10;</li>
+<li>修改数据 update t1 set name='abc',age=10 where id=5;</li>
+</ul>
+<h3>day02</h3>
+<ol>
+<li>
+表示数据唯一性的字段称为主键  主键约束：唯一且非空 
+	primary key 
+</li>
+<li>自增 auto_increment   null自动赋值 只增不减 </li>
+<li>注释 comment </li>
+<li>`修饰表名和字段名 可以省略 和' 修饰字符串</li>
+<li>冗余   通过拆分表解决</li>
+<li>
+事务：数据库中执行SQL语句的工作单元 可以保证全部成功或全部失败 
+show variables like '%autocommit%';
+set autocommit=0/1; 
+commmit;
+rollback;
+savepoint s1;
+rollback to s1;
+</li>
+<li>SQL分类</li>
+<li>DDL：数据定义语言 包括 create drop alter truncate 不支持事务</li>
+<li>DML：数据操作语言 包括 insert delete update select(DQL) 支持事务</li>
+<li>DQL：数据查询语言 只有select</li>
+<li>
+TCL： 事务控制语言 包括 commmit;
+rollback;
+savepoint s1;
+rollback to s1;
+</li>
+<li>
+<p>DCL： 数据控制语言  分配用户权限相关SQL</p>
+</li>
+<li>
+<p>数据类型</p>
+</li>
+<li>整数： int(m) bigint(m)  m代表显示长度 需要结合 zerofill</li>
+<li>浮点数： double(m,d) m带表总长度 d代表小数长度  decimal(m,d)</li>
+<li>字符串： char(n)固定长度 最大255 执行效率高  varchar(n)可变长度最大65535超过255建议使用text 节省空间 text 可变长度 最大65535</li>
+<li>日期： date年月日 time时分秒  datetime 默认null 最大值9999-12-31  timestamp 默认当前时间 最大值 2038-1-19 </li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

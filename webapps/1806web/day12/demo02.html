@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 引入jquery -->
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+	/* onload = function(){
+		
+	} */
+	
+	/* 加载完成jquery版 (复杂版)*/
+	$(document).ready(function(){
+		
+	});
+	/* 加载完成jquery版 (简单版)*/
+	$(function(){
+		alert("jquery");
+		//给按钮绑定事件
+		$("#mybtn").click(function(){
+			alert("按钮绑定");
+		})								/* ;可加可不加 */
+	});
+</script>
+</head>
+<body>
+<input type="button" id="mybtn" value="click">
+</body>
+</html>

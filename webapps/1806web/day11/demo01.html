@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>下拉条</title>
+<style type="text/css">
+	ul>li{
+		cursor: pointer;
+	}
+	ul>li>ul{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(obj){
+		var lis = document.getElementsByClassName("title");
+		for(var i=0;i<lis.length;i++){
+			var li = lis[i];
+			if(obj!=li){
+				var ul = li.getElementsByTagName("ul")[0];
+				ul.style.display = "none"; 
+			}
+		}
+		
+		var ul = obj.getElementsByTagName("ul")[0];
+		if(ul.style.display == "none"||ul.style.display ==""){		//因为通过js代码操作的样式为内联样式。第一次虽然内部样式 元素隐藏，但内联并没有隐藏，所以取出的为空字符串
+			ul.style.display = "block";
+		}else{
+			ul.style.display = "none"
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<ul>
+		<li onclick="myfn(this)" class="title" id="myli">步枪
+			<ul>
+				<li>Kar98</li>
+				<li>Винтовка Мосина</li>
+				<li>Lee-Enfield</li>
+			</ul>
+		</li>
+		<li onclick="myfn(this)" class="title">自动步枪
+			<ul>
+				<li>M4A1</li>
+				<li>M16A1</li>
+				<li>AR15</li>
+				<li>G41</li>
+				<li>G11</li>
+				<li>Zas m21</li>
+			</ul>
+		</li>
+		<li onclick="myfn(this)" class="title">手枪
+			<ul>
+				<li>Desert Eagle</li>
+				<li>M1918</li>
+				<li>p7</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

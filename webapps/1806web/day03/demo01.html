@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS基本功能</title>
+<style type="text/css"> 
+/* 第一个CSS(CSS中注释必须使用此形式 )
+	内联式CSS：
+	-直接写在标签的style属性中的CSS样式
+	-具有最高的优先级 
+	-只作用在当前元素上，不能复用
+	
+	网页内嵌式CSS：
+	-使用<style>元素嵌入到页面中的CSS样式
+	-作用在当前页面的元素中，可以在当前页面范围内复用
+	
+	外部式CSS：
+	-样式保存在.css文件中
+	-使用<link>元素引用到当前页面中的CSS样式 
+	-可以作用在所有引用了CSS文件的网页，可以再这些网页复用
+	
+	优先级:  -内联式优先级最高
+			-浏览器(用户代理)默认样式优先级最低
+			-内部样式和外部样式，那个与标签近，那个优先级就高
+ */
+p{color: red} /*网页内嵌式  */
+</style>
+</head>
+<body>	
+	<h1>CSS Hello</h1>
+	<p>Hello World</p>
+	<!-- 内联样式(inline style) -->
+	<p style="color: #00f">内联式蓝</p>
+	
+</body>
+</html>

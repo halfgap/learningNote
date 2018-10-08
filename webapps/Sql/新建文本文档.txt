@@ -1,0 +1,419 @@
+数据库相关
+
+create database db1 character set gbk/utf8;
+show databases;
+drop database db1;
+show create database db1;
+use db1;
+表相关
+create table t1(name varchar(10),age int);
+show tables;
+show create table t1;
+create table t1(name varchar(10),age int) engine=myisam/innodb charset=utf8/gbk;
+drop table t1;
+desc t1;
+rename table t1 to t2;
+alter table t1 engine=myisam/innodb charset=utf8/gbk;
+alter table t1 add age int first/after xxx;
+alter table t1 drop age;
+alter table t1 change age abc int;
+alter table t1 modify age int first/after xxx;
+
+数据相关
+
+insert into t1 values(值1,值2),(值1,值2); insert into t1 (字段1,字段2) values(值1,值2),(值1,值2);
+select * from t1; select name,age from t1;
+delete from 表 where 条件
+
+update 表 set 更新的数据 where 条件
+
+
+主键约束：
+create table emp(id int primary key,name varchar(10));
+insert into emp values(1,'tom');
+insert into emp values(2,'milk');
+insert into emp values(1,'cat');	//失败，主键不能重复
+insert into emp values(null,'jjj');	//失败，主键不能为空
+
+
+自动增长
+
+create table emp(id int primary key auto_increment,name varchar(10));
+在表中曾出现过的最大值的基础上+1
+当自增字段的值为null时，会自动增长
+
+
+
+注释
+create table t2(
+	id int primary key auto_increment comment '这是ID，表示唯一性',
+	name varchar(10) comment '这是名字',
+	sal int comment '这是工资'
+	);
+查看方式：show create table t2;
+
+
+
+
+事务
+
+1.将数据库的自动提交改为手动提交
+2.执行多条sql语句，此时sql会在内存中执行
+3.当所有sql在内存中执行完毕，手动提交到数据库文件中。
+
+-查看自动提交的状态:
+show variables like '%autocommit%';
+
+-关闭/打开自动提交
+set autocommit = 0/1;
+
+-提交
+commit;
+
+-事务回滚(误操作后的撤销操作,回滚到上次提交的点)
+-设置回滚点:savepoint 标识;
+-回滚到某个回滚点: rollback to 标识;
+
+
+
+###SQL分类
+1.DDL (Data Definition Language)数据定义语言，包括:
+create alter drop truncate 不支持事务
+
+truncate 删除表并创建一个新表(空表)
+
+在执行效率上 drop>truncate>delete
+
+2.DML (Data Manipulation Language)数据操作语言，包括:
+insert,delete,update,select 支持事务
+
+3.DQL (Data Query Language)数据查询语言，包括:
+select
+
+4.TCL (Transaction Control Language)事务控制语言,包括:
+commit,rollback,savepoint
+
+5.DCL (Data Control Language)数据控制语言 分配用户权限相关
+
+
+
+
+###数据库的数据类型
+1.整形 int(m) bigint(m) m表示显示长度 zerofill(使用零填充)
+
+2.浮点数 double(m,d) m代表总长度,d代表小数位    decimal(m,d)超高精度
+ 
+3.字符串  char(n) 固定长度，效率高，最大长度255    varchar(n)可变长度，节省空间，最大长度65535
+超过255建议使用text
+text 可变长度，最大长度65535
+
+
+4.日期类型
+date:保存年月日
+time:保存时分秒
+datetime:保存年月日时分秒，默认值为null,最大值9999-12-31
+timestamp(时间戳):保存年月日时分秒，默认值为当前时间,最大值2038-1-19
+
+
+-别名
+e.g select name 姓名,sal 工资 from emp;
+
+-去重
+select distinct job from emp;
+
+-and与or
+and同&& 与
+or同|| 或
+
+
+-in
+e.g 
+查询员工表中工资为5000,1500,3000的员工信息
+select * from emp where sal in(5000,1500,3000);
+
+-between x and y         在x和y之间，[x,y]
+
+-模糊查询 like
+ _:代表单个未知字符
+ %:代表0或多个未知字符
+e.g
+查询名字以a开头   ename like 'a%'
+查询名字以a结尾    %a
+查询包含a 	  %a%
+第二个字母是a     _a%
+倒数第三个字母是a     %a__
+第二个字母是a最后字母是b  _a%b
+
+
+-排序  如果有条件写在条件后面，没条件写在表明后面
+e.g 将工资排序显示
+
+
+select ename,sal from emp order by sal; (默认升序)
+select ename,sal from emp order by sal desc;(降序)
+
+-分页查询 limit x,y 通常写在sql语句最后面
+ 第一个参数代表跳过的条数
+ 第二个参数代表请求的数量，也就是每页的数量
+
+e.g每页有10条 第一页
+limit 0,10
+每页有10条 第三页
+limit 20,10
+每页有5条，第八页
+limit 35,5
+
+
+
+-ifnull(x,y)函数      
+
+e.g age=ifnull(x,y)  如果x的值为null则赋值y,如果不为null则赋值x.
+
+
+-聚合函数
+
+ 对多行数据进行统计
+ 
+1.求和  sum(求和的字段名)
+e.g 查询20号部门员工工资总和
+select sum(sal) from emp where deptno=20;
+ 
+2.平均值  avg()
+
+
+3.最大值  max()
+
+4.最小值  min() 
+
+5.统计数量 count(字段名/*)
+
+
+###日期相关函数 
+
+now()  获取当前年月日时分秒
+e.g update emp set hiredate=now() where empno=xxx;
+select now();   //可以用该方法快速简单的验证
+
+cuedate()  获取当前年月日
+
+
+curtime()  获取当前时分秒
+
+
+date(now())  提取年月日
+
+time(now())  提取时分秒
+
+提取时间分量  年月日时分秒
+extract(year from now());   
+extract(month from now());   
+extract(day from now());   
+extract(hour from now());   
+extract(minute from now());   
+extract(second from now());   
+
+
+日期格式化函数
+
+	-格式  date_format(日期，format)
+format:
+%Y 四位年  %y 两位年
+%m 两位月  %c 一位月
+%d 日
+%H 24小时  %h 12小时
+%i 分
+%s 秒
+
+
+把非标准格式转回标准格式
+
+str_to_date(非标准时间，format)
+
+
+
+###字符串相关
+-字符串拼接
+concat('x','y')
+e.g查询员工姓名和工资，要求工资以元为单位
+select ename,concat(sal,'元') from emp;
+
+
+-获取字符串长度
+char_length
+e.g查询员工姓名和名字的长度
+select ename,char_length(ename) 名字长度 from emp;
+
+
+-获取字符串在另一个字符串出现的位置
+instr(str,substr)
+locate(substr,str)
+
+-插入字符串
+insert(str,start,length,newstr)
+
+select insert('abcd',3,2,'m');
+
+-转大写转小写
+upper(str) lower(str)
+
+
+-去空白
+trim('     a  b    ');  a  b
+
+-截取字符串 
+left(str,start)
+right(str,start)
+substring(str,start,[length]);
+
+
+-重复
+repeat(str,count)
+
+-替换
+replace(str,old,new)
+
+-反转
+reverse(str)
+
+
+###数学相关
+-向下取整floor(num)
+select floor(3,84);  3
+
+-四舍五入round(num)
+select round(23.6);  24
+
+-四舍五入round(num,m) m代表小数位数
+select round(23.879,2);  23.88
+
+-非四舍五入 truncate(num,m) m代表小数位数
+select truncate(23.879,2);  23.87
+
+-随机数 rand() 0-1随机数 [0-1)
+select floor(rand()*9+5); 5-13随机数
+
+我现在都没有。。我带妹了的实感
+哦原来我在带妹啊
+大概是这种感觉
+
+###分组查询
+group by
+e.g查询每个部分的最高工资
+select deptno,max(sal) from emp group by deptno;
+
+查询每个部分下每个主管的手下人数
+select deptno,mgr,count(*) from emp where mgr is not null group by deptno,mgr;
+
+
+各种关键字顺序    where ... group by ... order by ... limit ...
+
+
+
+-having 
+having一般要结合分组查询和聚合函数使用，用于给聚合函数的内容添加条件
+普通字段的条件写在where后面，聚合函数的条件写在having后面
+
+e.g查询每个部分的平均工资，要求平均工资大于2000
+select deptno,avg(sal) a from emp where a>2000 group by deptno ;  //错误
+select deptno,avg(sal) a from emp group by deptno having a>2000;  //正确
+
+having结合group by一起使用
+
+
+-子查询
+
+select * from emp where sal= (select max(sal) from emp)
+
+嵌套在sql语句中的查询语句,称为子查询.
+可以嵌套N层。
+可以写在 1.where或having后面，当做查询条件的值  2.from后面，当一张新表(必须有别名) 3.写在创建表的时候
+eg2  select ename from (select * from emp where sal>1000) n;
+eg3  create table emp_20 as (select * from emp where deptno=20);
+ 
+
+
+-关联查询，同时查询多张表的查询方式
+
+eg查询每一个员工的名称和其对应的部分名称
+select emp.ename,dept.dname from emp,dept where emp.deptno=dept.deptno;
+select e.ename,d.dname from emp e,dept d where e.deptno=d.deptno;   //可以用别名
+
+
+-笛卡尔积
+
+如果关联查询不写关联关系，则查询到的数据时两张表的乘积，这个乘积称为笛卡尔积
+笛卡尔积是一种错误查询方式的结果，工作中切记不要出现
+
+
+-等值连接和内连接,查询结果是一样的,推荐使用内连接
+1.等值连接 select * from A,B where A.x=B.x and A.y=xxx;
+2.内连接 select * from A join B on A.x=B.x where ...;
+
+
+-外连接
+使用外连接查询得到的数据是除了两张表的交集数据以外的另外一张主表的全部数据，
+哪个表为主键通过 left/right控制  
+
+e.g查询所有员工的名称和其对应的部门名称，即使没有部门，也要显示其信息。
+select e.ename,d.dname from emp e left join dept d on e.deptno=d.deptno
+左外连接 ...left...  
+右外连接 ...right...
+
+
+
+两张表的交集数据		内连接
+某一张表的全部数据和另一张表的交集数据  外连接
+
+
+day05
+###关联关系之表设计
+
+
+-外键：用来建立关系的字段
+-主键：用来表示数据唯一性的字段
+
+-一对一
+AB两表，A表中一条数据对应B表中一条数据，B也亦然。
+应用场景：商品表和商品详情表、用户表和用户信息扩展表
+如何建立关系：在从表中添加外键，外键的值指向主表的主键
+
+
+-一对多
+A表中的一条数据对应B表中的多条数据，同时B表中的一条数据对一个A表中的一条数据
+应用场景：部门-员工表、分类-商品表
+
+
+
+
+
+-多对多
+
+A表中一条数据对应B表中的多条数据，B表中一条数据对应A表中的多条数据
+
+应用场景 老师-学生    用户-角色
+如何建立关系：单独建立关系表，在关系表中添加两个外键
+
+
+
+
+
+
+
+###表设计值权限管理
+创建三张主表user role module 和两张关系表 u_r(用户和角色)  r_m(角色和权限)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

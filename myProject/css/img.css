@@ -1,0 +1,220 @@
+@charset "utf-8";
+html{
+	
+	margin: 0;
+	
+}
+body {
+	font-weight: bold;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	font-family: "Lato", sans-serif;
+	background: url("../imgs/bg3.jpg") fixed center center no-repeat;
+   background-size: cover;
+   overflow: hidden;
+}
+div{
+	width:110px;
+	height:110px;
+	margin-bottom: 50px;
+}
+
+
+.fold:HOVER{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.6);
+	border-radius:5px;
+	
+}
+.fol{
+	width:100px;
+	height:90px;
+	-webkit-transition: 1s;
+}
+.fol:HOVER{
+	width:110px;
+	height:100px;
+	-webkit-transition: 1s;
+}
+div>p{
+	text-align: center;
+	margin-top: 5px;
+	
+}
+a {
+	text-decoration: none;
+}
+#kaishi{
+	position:absolute;
+	left:0;
+	bottom:0;
+	background-color:rgba(255,255,255,0.5);
+	margin: 0;
+	height:50px;
+}
+#kaishi1{
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:50px;
+	margin-bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	transition:width 1s;
+		color:white;
+		line-height:50px;
+		text-align: center;
+}
+#kaishi2{
+	position:absolute;
+	right:0;
+	bottom:0;
+	height:50px;
+	margin-bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	color:white;
+	text-align: center;
+	line-height:50px;
+}
+
+#back{
+	position:absolute;
+	left:0;
+	bottom:0px;
+	height:50px;
+	margin: 0px;
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+}
+#back:HOVER{
+	background-color: rgba(0,0,0,0.3);
+}
+#back>img{
+	height:50px;
+	width:50px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+#mySidenav2,#mySidenav3,#mySidenav4,#mySidenav5,#mySidenav6{
+	left: 400px;
+	background-color: rgba(0,0,0,0.5);
+	color:white;
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav>div{
+	width:400px;
+	margin:0px;
+	height:100px;
+	transition: width 1s;
+}
+.sidenav>div:HOVER {
+	cursor:pointer;
+	background-color: rgba(255,255,255,0.5);
+	
+}
+#mySidenav>div:Hover{
+	width:420px;
+	height:120px;
+}
+.sidenav>div>img{
+	width:80px;
+	height:80px;
+}
+.sidenav>div>span{
+	color:white;
+}
+#ip:HOVER{
+	cursor:default;
+	background-color: rgba(0,0,0,0);
+}
+
+
+.sidenav>p{
+	font-size:20px;
+	font-family:'楷体';
+	margin:50px;
+	line-height: 1.6em;
+	text-indent: 2em;
+}
+
+.sidenav>.d1{
+	height:194px;
+	width:194px;
+	float:left;
+	/* background-color: rgba(172,173,200,0.6); */
+}
+.sidenav>.d1>img{
+	height:160px;
+	width:160px;
+	transition:width 1s;
+}
+
+.sidenav>.d1>img:HOVER {
+	width:180px;
+	height:180px;
+	transition: 1s;
+}
+#mySidenav4>a{
+	color:#7FFFD4;
+}
+#mySidenav4>a:HOVER{
+	color:#F0F8FF;
+}
+#dd{
+	width:582px; 
+	height:300px;
+	
+}
+#dd:HOVER {
+	width:592px; 
+	height:320px;
+}
+
+
+#egg{
+	width:150px;
+	height:30px;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	right:-150px;
+	bottom:30px;
+	transition: 1s;
+	color:	#00BFFF;
+}
+
+
+

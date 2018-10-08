@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width:700px;
+		height:400px;
+		position: relative;
+  		overflow: hidden;  
+  		cursor: help;
+  		border-radius: 20px;
+	}
+	img{
+		width:700px;
+		height:400px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.left=i*700+"px";
+		}
+	}
+	//定时器1
+	var timeId;
+	beginfn();
+	//鼠标移到div上面后，让定时器1停止
+	function stopfn(){
+		clearInterval(timeId);
+	}
+	//鼠标移出div后，让定时器1启动
+	function beginfn(){
+		//为了避免出现连续开启两次定时器，在每次开启之前关闭一次 
+		clearInterval(timeId);
+		timeId = setInterval(move,4000);
+	}
+	
+	//页面失去焦点停止--离开页面后停止
+	onblur = function(){
+		stopfn();	
+	}
+	//页面获取焦点时开始
+	onfocus = function(){
+		beginfn();
+	}
+	
+function move(){
+		//定时器2
+		var moveId = setInterval(function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			var oldLeft = parseInt(img.style.left);
+			oldLeft-=7;
+			if(oldLeft<=-700){
+				oldLeft = (imgs.length-1)*700;
+				clearInterval(moveId);
+			}
+			img.style.left = oldLeft+"px";
+		}
+	},15);
+}
+
+</script>
+</head>
+<body>
+<div onmouseover="stopfn()" onmouseout="beginfn()">
+	<img src="1.jpg">
+	<img src="2.jpg">
+	<img src="3.jpg">
+	
+</div>
+<h1>实现该种效果的轮播</h1>
+</body>
+</html>

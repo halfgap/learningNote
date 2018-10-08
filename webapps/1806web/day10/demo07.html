@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [["朝阳","海淀","大兴"],["唐山","秦皇岛","廊坊"],["青岛","烟台","济南"]];
+	function changefn(){
+		s2.innerHTML = "<option>请选择</option>"
+  		var cities = arr[s1.value];
+		for(var i=0;i<cities.length;i++){
+			var op = document.createElement("option");
+			var c = cities[i];
+			op.innerText =c;
+			s2.appendChild(op);
+		}
+	}
+</script>
+</head>
+<body>
+<select onchange="changefn()" id="s1">
+	<option>请选择</option>
+	<option value="0">北京</option>
+	<option value="1">河北</option>
+	<option value="2">山东</option>
+</select>
+
+<select id="s2">
+	<option>请选择</option>	
+</select>
+</body>
+</html>

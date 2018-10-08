@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简单计算器e</title>
+<style type="text/css">
+	div,p,input{
+		border:4px solid #ccc;
+		border-radius: 4px;
+	}
+	p,input{
+		float: left;
+		margin: 4px 0 4px 4px;
+	}
+	div{
+		width:200px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	p{
+		width:135px;
+		height:37px;
+		line-height:37px;
+ 		overflow: hidden;
+	}
+	input{
+		width:45px;
+		height:45px;
+	}
+	input:HOVER {
+		background-color: #F0F8FF;
+		cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+	
+	function fn(num){
+		 if(num=="="){
+			p.innerText = eval(p.innerText);
+		}else if(num=="C"){
+			p.innerText="";
+		}else{
+			//取出当前p标签文本的最后一位字符
+			var last = p.innerText.substring(p.innerText.length-1);
+			if(last=="+"||last=="-"||last=="*"||last=="/"){
+				if(num=="+"||num=="-"||num=="*"||num=="/"){
+					return;
+				}
+			}
+			p.innerText += num;
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+	<div>
+		<p id="p"></p>
+		<input type="button"  value="C" onclick="fn('C')">
+		<input type="button"  value="7" onclick="fn('7')">
+		<input type="button"  value="8" onclick="fn('8')">
+		<input type="button"  value="9" onclick="fn('9')">
+		<input type="button"  value="/" onclick="fn('/')">
+		<input type="button"  value="4" onclick="fn('4')">
+		<input type="button"  value="5" onclick="fn('5')">
+		<input type="button"  value="6" onclick="fn('6')">
+		<input type="button"  value="*" onclick="fn('*')">
+		<input type="button"  value="1" onclick="fn('1')">
+		<input type="button"  value="2" onclick="fn('2')">
+		<input type="button"  value="3" onclick="fn('3')">
+		<input type="button"  value="-" onclick="fn('-')">
+		<input type="button"  value="0" onclick="fn('0')">
+		<input type="button"  value="." onclick="fn('.')">
+		<input type="button"  value="=" onclick="fn('=')">
+		<input type="button"  value="+" onclick="fn('+')">
+	</div>
+</body>
+</html>

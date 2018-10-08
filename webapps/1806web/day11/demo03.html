@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	function downfn(){
+		console.log(event.keyCode+":"+String.fromCharCode(event.keyCode));
+	}
+	
+	function upfn(){
+		//event.keyCode 获取键盘按键对应的十进制数值
+		
+		//String.fromCharCode 将数值转换为对应键位
+		console.log(event.keyCode+":"+String.fromCharCode(event.keyCode));
+		if(event.keyCode==13){
+			alert("登陆成功！");
+		}
+	}
+	
+
+</script>
+</head>
+<body>
+<input type="text" onkeydown="downfn()" onkeyup="upfn()">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	.ok{
+		display: none; /* 不显示  */
+	}
+	.err{
+		color: red;
+		display: inline; 
+	}
+</style>
+<script type="text/javascript">
+	function checkun(){
+		var reg = /^\w{6,10}$/;
+		if(reg.test(ss1.value)){
+			s1.className="ok";
+			return true;
+		}else{
+			s1.className="err";
+			return false;
+		}
+}
+	function checkpw(){
+		var reg = /^\w{6,10}$/;
+		if(reg.test(ss2.value)){
+			s2.className="ok";
+			return true;
+		}else{
+			s2.className="err";
+			return false;
+		}
+}
+</script>
+</head>
+<body>
+	<!-- onsubmit当提交表单时，校验 -->
+<form action="http://www.baidu.com" onsubmit="return checkun()+checkpw()==2">
+	<!-- onblur失去焦点事件 -->
+	用户名:<input type="text" onblur="checkun()" id="ss1"><span id="s1" class="ok" >格式错误</span><br>
+	密码:<input type="text" onblur="checkpw()" id="ss2"><span id="s2" class="ok">格式错误</span><br>
+	<input type="submit" value="登录">
+</form>
+</body>
+</html>

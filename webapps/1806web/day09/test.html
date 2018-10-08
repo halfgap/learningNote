@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.rowDiv{
+		overflow: hidden;
+	}
+	.colDiv{
+		float:left;
+		width:100px;
+		height:100px;
+		margin:5px;
+		background-color: pink;
+	}
+</style>
+<script type="text/javascript">
+	function fn(){
+		for(var i=0;i<row.value;i++){
+			var rowDiv = document.createElement("div");
+			rowDiv.className = "rowDiv";
+			for(var j=0;j<col.value;j++){
+				var colDiv = document.createElement("div");
+				colDiv.className = "colDiv";
+				rowDiv.appendChild(colDiv);
+			}
+			document.body.appendChild(rowDiv);
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<input type="text" placeholder="行" id="row">
+	<input type="text" placeholder="列" id="col">
+	<input type="button" value="生成" onclick="fn()">
+</body>
+</html>

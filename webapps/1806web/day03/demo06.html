@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>派生选择器</title>
+<style type="text/css">
+ul {color: red;}			/* 可继承  相当于ul li*/
+ul {border: 1px solid blue;"} /* 不可继承 */
+ul>li>ul>li {border: 1px solid red}
+</style>
+</head>
+<body>
+	<h2>派生选择器(后代选择器)</h2>
+	<!-- 利用元素的层级关系选择元素，绑定样式
+		用法一：子孙后代选择demo06		ul li {color: red;}	             选择ul中全部的子孙li元素
+		用法二：子选择	demo07		    ul>li>ul>li {color: #ddd} 选择ul的li的ul的li元素
+		-->
+	<ul>
+		<li>java基础
+			<ul>
+				<li>变量
+					<ul>
+						<li>什么是变量</li>
+						<li>如何声明变量</li>
+						<li>变量命名</li>
+					</ul>				
+				</li>
+				<li>数据类型
+					<ul>
+						<li>整数类型</li>
+						<li>浮点类型</li>
+					</ul>
+				</li>
+				<li>流程控制</li>
+			</ul>
+		</li>
+		<li>面向对象编程
+			<ul>
+				<li>对象和类</li>
+				<li>继承</li>
+				<li>封装</li>
+				<li>多态</li>
+			</ul>
+		</li>
+		<li>Java核心API
+			<ul>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

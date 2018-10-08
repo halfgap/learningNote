@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS目录</title>
+<style type="text/css">
+	body {
+    font-family: "方正准圆_GBK","Lato", sans-serif;
+    background: url("2.jpg") fixed center center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#button
+{
+	-webkit-appearance:button; 
+	background-color: #FFFAFA;
+	border: none;
+    color: #000;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+       margin-left: 33px;
+       font-size:20px;
+}
+#button:HOVER {
+	cursor: pointer;
+	background-color: #F0FFFF;
+}
+li{
+	font-size:20px;
+	list-style-type: none;
+}
+#btn{
+	width:25px;
+}
+#webDemo{
+	display:none;
+	width:300px;
+	height:300px;
+	background-image : url('paper.png');
+	background-position : center;
+/* 	background-color: rgba(0,0,0,0.4); */
+	position: relative;
+	top: -704px;
+    left: 400px;
+    border-radius: 40px;
+    text-align: center;
+    overflow: auto;
+    opacity: 0.95;
+}
+#webDemo>a{
+	color:black;
+	text-decoration: none;
+	
+}
+</style>
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="dayWeb/web03.html" target="_blank" style="color:white;">web03</a>
+  <a href="dayWeb/web04.html" target="_blank" style="color:white;">web04</a>
+  <a href="dayWeb/web05.html" target="_blank" style="color:white;">web05</a>
+</div>
+
+<div id="main">
+  <h2>CSS</h2>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img id="btn" src="btn.png"> 点击打开档案</span><br>
+   <span  onclick="showOtherDiv()" style="font-size:30px;cursor:pointer"><img id="btn" src="btn2.png"> 点击打开各类demo</span><br>
+  <div>
+  	<ul>
+  		<li><a href="dayWeb/web03.html" style="text-decoration: none; color:black; font-weight: bold;" target="_blank">web03</a>
+  			<ul>
+  				<li>CSS 注释</li>
+  				<li>CSS 的3种使用方式
+  					<ul>
+  						<li>内联式CSS</li>
+  						<li>网页内嵌式</li>
+  						<li>外部式</li>
+  					</ul>
+  				</li>
+  				<li>CSS 样式的优先级</li>
+  				<li>CSS 继承特性</li>
+  				<li>CSS 语法</li>
+  				<li>CSS 常用属性</li>
+  			</ul>
+  		</li>
+  		<li><a href="dayWeb/web04.html" style="text-decoration: none; color:black; font-weight: bold;" target="_blank">web04</a>
+  			<ul>
+  				<li>Box（盒子） 模型</li>
+  				<li>盒子模型中的内容</li>
+  				<li>背景设置</li>
+  				<li>元素的显示方式</li>
+  			</ul>
+  		</li>
+  		<li><a href="dayWeb/web05.html" style="text-decoration: none; color:black; font-weight: bold;" target="_blank">web05</a>
+  			<ul>
+  				<li>粘连问题</li>
+  				<li>移动元素有两种方式</li>
+  				<li>行内元素关于盒子模型的问题</li>
+  				<li>定位</li>
+  				<li>行内元素的垂直对齐方式</li>
+  			</ul>
+  		</li>
+  	</ul>
+  </div>
+  <br><br><br><br>
+ 	<a id="button" href="http://www.runoob.com/css/css-tutorial.html" target="_blank">CSS教程</a><a id="button" href="index.html">返回主页</a>
+	 	<div id="webDemo" >
+ 		<br>
+		<a href="../1806web/day03/demo10.html" target="_blank">web03.CSS常用属性</a><br><br>
+		<a href="../1806web/day04/demo03.html" target="_blank">web04.图片触碰切换</a><br><br>
+		<a href="../1806web/day04/demo04.html" target="_blank">web04.背景文字滚动</a><br><br>
+		<a href="../1806web/day04/demo05.html" target="_blank">web04.粉嫩的登录界面</a><br><br>
+		<a href="../1806web/day05/test01.html" target="_blank">web05.学子商城图片小练习</a><br><br>
+	</div>
+</div>
+
+<script type="text/javascript">
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+function showOtherDiv(){
+    if(webDemo.style.display=="block"){
+    	webDemo.style.display="none";
+    }else{
+    	
+    	webDemo.style.display="block";
+    }
+}
+</script>
+</body>
+</html>

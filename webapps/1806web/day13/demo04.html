@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+		width:80%;
+		margin:0 auto;
+		border: 2px solid black;
+		border-collapse: collapse;
+	}
+	th,td{
+		border: 2px solid black;
+	}
+	body{
+		text-align: center;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	function addfn(){
+		var td1 = $("<td></td>");	td1.text($("#ip1").val());
+		var td2 = $("<td></td>");	td2.text($("#ip2").val());
+		var td3 = $("<td></td>");	td3.text($("#ip3").val());
+		var td4 = $("<td><input type='button' value='删除' onclick='delfn(this)'><input type='button' value='修改' onclick='editfn(this)'></td>");
+		var tr = $("<tr></tr>"); 
+		tr.append(td1);
+		tr.append(td2);
+		tr.append(td3);
+		tr.append(td4);
+		$("table").append(tr);
+		
+	}
+	
+	function delfn(btn){
+		$(btn).parent().parent().remove();
+	}
+	
+	 function editfn(btn){
+			
+		 	var td1 = $("<td></td>");	td1.text($("#ip1").val()); 
+			var td2 = $("<td></td>");	td2.text($("#ip2").val());
+			var td3 = $("<td></td>");	td3.text($("#ip3").val());
+			var td4 = $("<td><input type='button' value='删除' onclick='delfn(this)'></td>");
+			var tr = $("<tr></tr>"); 
+			$(btn).parent().parent().after(td4);
+			$(btn).parent().parent().after(td3);
+			$(btn).parent().parent().after(td2);
+			$(btn).parent().parent().after(td1);
+			$("table").after(tr);
+			$(btn).parent().parent().remove();
+	} 
+	
+</script>
+</head>
+<body>
+	<input type="text" placeholder="姓名" id="ip1">
+	<input type="text" placeholder="年龄" id="ip2">
+	<input type="text" placeholder="工资" id="ip3">
+	<input type="button" value="添加" onclick="addfn()">
+	<hr>
+	<table>
+		<caption>员工表</caption>
+		<tr>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>工资</td>
+				<td>操作</td>
+		</tr>
+		
+		
+	</table>
+</body>
+</html>

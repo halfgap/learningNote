@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.ok{
+		color: green;
+	}
+	.err{
+		color: red;
+	}
+</style>
+<script type="text/javascript">
+	function fn(){
+		var reg = /^\w{6,10}$/;
+		
+		
+		if(reg.test(ss1.value)){
+			s1.className="ok";
+		}else{
+			s1.className="err";
+		}
+		
+		if(reg.test(ss2.value)){
+			s2.className="ok";
+		}else{
+			s2.className="err";
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" placeholder="用户名" id="ss1">
+	<span  id="s1" >请输入6-10位字母数字下划线</span><br>
+	<input type="password" placeholder="密码" id="ss2">
+	<span id="s2">请输入6-10位字母数字下划线</span><br>
+	<input type="button" value="校验" onclick="fn()">
+</body>
+</html>

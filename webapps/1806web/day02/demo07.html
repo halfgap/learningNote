@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+<!-- action:提交的地址 -->
+<form action="http://www.baidu.com">
+	<!-- 文本框    
+	size:长度     
+	name：提交数据时的键(key)，用户输入的内容为值(value)
+	manlength:最大长度
+	readonly:只读
+	value：设置初始值
+	placeholder:占位文本
+	-->
+	用户：<input type="text"  name="username" maxlength=5  value="你做吧" 
+	placeholder="用户名"><br>
+	<!-- 密码框 -->
+	 密码：<input type="password" name="password" placeholder="密码" maxlength=6><br>
+	<!-- 单选框 -->
+	性别：<input type="radio" name="gender" value="man" id="nan" checked="checked"><label for="nan">男</label>
+	<input type="radio" name="gender" value="women" id="nv"><label for="nv">女</label>
+	<br>
+	<!-- 多选框 -->
+	兴趣：<input type="checkbox" name="hobby" value="sport" id="s"><label for="s">运动</label> 
+	<input type="checkbox" name="hobby" value="internet" id="i"><label for="i">上网</label>
+	<input type="checkbox" name="hobby" value="music" id="m"><label for="m">音乐</label>
+	<input type="checkbox" name="hobby" value="game" id="g" checked="checked"><label for="g">游戏 </label>
+	<br>
+	<!-- 下拉选 -->
+	城市：<select name="city">
+		<option>请选择</option>
+		<option value="bj" selected="selected">北京</option>
+		<option value="ss">上海</option>
+		<option value="gz">广州</option>
+		<option value="sz">深圳</option>
+	</select><br>
+	
+	<!-- 时间选择器 -->
+	生日：<input type="date" name="birthday">
+	<br>
+	<!-- 文件选择器 -->
+	头像：<input type="file" name="pic">
+	<br>
+	<!-- 文本域 -->
+	简介：<textarea rows="3" cols="20" name="intro">这家伙很懒，什么都没写</textarea>
+	<br>
+	<!-- 隐藏域 -->
+	<input type="hidden" name="userid" value="198">
+	<br>
+	<!-- 重置按钮 -->
+	<input type="reset" value="Reset">
+	&nbsp;&nbsp;
+	<!-- 自定义按钮 -->
+	<input type="button" value="MyButton" >
+	&nbsp;&nbsp;
+	<!-- 提交按钮 -->
+	<input type="submit" value="Reg">
+	
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

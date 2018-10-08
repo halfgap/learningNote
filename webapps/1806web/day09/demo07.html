@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hohoho</title>
+<style type="text/css">
+	img{
+		width:10%;
+		height:25%;
+		position: absolute;
+		left: 40%;
+		top: 0;
+	}
+</style>
+<script type="text/javascript">
+	var x=0;
+	onclick = function(){
+		x+=10;
+		img.style.top = x+"px";
+	}
+ 	/* 定时器 1.函数  2.时间间隔 */
+	setInterval(moveImg,10);
+	setInterval(function(){x=0;},5000);
+	function moveImg(){
+		x+=1;
+		img.style.top = x+"px";
+ 	}
+</script>
+</head>
+<body>
+	<img src="../pngs/fire.png" id="img">
+</body>
+</html>

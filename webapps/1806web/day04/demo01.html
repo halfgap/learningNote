@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>盒子模型</title>
+<style type="text/css">
+.demo{
+	width: 100px;
+	height: 80px;
+	padding: 20px;/* 设定内边距，内容与盒子边界的缝隙 */
+	border: 3px dashed #ddd; /* 设定边框，相当于盒子皮的厚度   */
+	/* 背景绘制在内边距之内，外边距范围不绘制背景 */
+	background-color: #ff0;
+}
+
+#box{
+	margin: 8px /* 设定外边距，盒子与盒子之间的距离 */
+}
+#box2{
+	border: 3px dashed #00f; 	/* 注意，id选择器要优先于类选择器，故这句话会覆盖类选择器中的border */
+	margin: 18px; 
+	margin-left: 8px
+}
+
+
+</style>
+</head>
+<body>
+	<h1>盒子模型</h1>
+	<div id="box" class="demo">嘻嘻</div>
+	<div id="box2" class="demo">盒子外边距相互侵占</div>
+</body>
+</html>

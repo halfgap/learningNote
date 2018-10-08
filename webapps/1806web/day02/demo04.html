@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表格标签</title>
+</head>
+<body>
+	<!-- 
+	border:边框的粗细，默认单位是px，可以省略
+	cellspacing:单元格与单元格，与外边框的间距，默认为1
+	cellpadding:单元格与数据的间距
+	-->
+	<table border="1" cellspacing="0" cellpadding="5" width="25%" align="center" bgColor="red">
+		<tr><!-- table row 行 -->
+			<td>1-1</td><!-- table data 数据 -->
+			<td bgColor="blue">1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+		</tr>
+		<tr bgColor="yellow">
+			<!-- rowspan 跨行 -->
+			<td rowspan="2" colspan="2">2-1</td>
+			<!-- colspan 跨列 -->
+			<td colspan="2">2-3</td>
+		</tr>
+		<tr>
+			<td>3-3</td>
+			<td>3-4</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

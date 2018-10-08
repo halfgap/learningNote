@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day02</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>1.http协议 (了解)</h1>
+<h2>(1)什么是http协议?</h2>
+<p>是一种网络应用层协议，规定了浏览器与web服务器之间如何通信以及
+相应的数据包的结构。</p>
+<pre><code>a. tcp/ip协议：属于传递层和网络层协议，保证数据可靠的传递。
+http协议属于应用层协议，需要依赖tcp/ip协议来传递数据包。
+
+b.浏览器与web服务器之间如何通信:
+
+    step1.建立连接
+    step2.发送请求
+    step3.发送响应
+    step4.关闭连接
+
+c.特点:
+    &quot;一次请求，一次连接&quot;
+    这样做的好处是,服务器可以利用有限的连接为尽可能多的请求服务。
+</code></pre>
+
+<p><img src="http.png" /></p>
+<h2>(2)数据包的结构</h2>
+<p>1)请求数据包</p>
+<pre><code>a.请求行: (请求方式 请求资源路径 协议和版本)
+b.若干消息头:
+    消息头是一些键值对(使用&quot;: &quot;分隔),浏览器与web服务器之间
+    可以通过消息头来传递一些特定的信息。比如，浏览器可以通过
+    发送&quot;user-agent&quot;消息头，告诉服务器浏览器的类型和版本。
+c.实体内容:
+    只有当请求方式为post时，实体内容才会有数据。
+    请求方式为get时，实体内容为空。
+</code></pre>
+
+<p>2)响应数据包</p>
+<pre><code>a.状态行 (协议和版本 状态码  状态描述)
+    200: 正常
+    500: 系统出错
+    404: 依据请求路径找不到对应的资源
+b.若干消息头
+    服务器也可以发送一些消息头给浏览器，比如，可以发送
+    &quot;content-type&quot;消息头，告诉浏览器，服务器返回的数据类型。
+c.实体内容
+    程序的处理结果，浏览器会解析出来，生成相应的页面。
+</code></pre>
+
+<h2>(3)两种请求方式</h2>
+<p>1)get请求</p>
+<pre><code>a.哪一些情况浏览器会发送get请求?
+    在浏览器地址栏直接输入某个地址
+    点击链接
+    表单默认的提交方式
+b.特点
+    会将请求参数添加到请求资源路径的后面，只能提交少量的数据给
+    服务器。
+        注：请求行只能存放大约2k左右的数据。
+    会将请求参数显示在浏览器地址栏，不安全。
+        注：有些网络设备，比如路由器就会记录包含了请求参数的
+        请求地址。
+</code></pre>
+
+<p>2)post请求</p>
+<pre><code>a.哪一些情况下，浏览器会发送post请求?
+    将表单的method属性设置为&quot;post&quot;。
+b.特点
+    会将请求参数添加到实体内容里面，可以提交大量的数据给服务器。
+    不会将请求参数显示在浏览器地址栏，相对安全。
+    注：
+        http协议并不会对数据加密，所以，对于敏感数据
+    需要进行加密处理(需要使用https协议)
+</code></pre>
+
+<h1>2.Servlet输出中文，如何处理?</h1>
+<h2>(1)为什么会产生乱码?</h2>
+<p>out.println方法默认会使用&quot;iso-8859-1&quot;来编码(不支持中文)。</p>
+<h2>(2)如何处理?</h2>
+<p>response.setContentType(&quot;text/html;charset=utf-8&quot;);</p>
+<h1>3.如何读取请求参数值?</h1>
+<p>(1)String request.getParameter(String paramName);</p>
+<pre><code>注：
+    a.如果请求参数名写错，获得null值。
+    b.表单提交时，如果不填写任何数据，会获得&quot;&quot;。
+</code></pre>
+
+<p>(2)String[] request.getParameterValues(String paramName);</p>
+<pre><code>注：
+    a.当有多个请求参数名相同时，使用此方法。
+    ?interest=cooking&amp;interest=fishing
+    b.对于多选框和单选框，如果一个都不选，会获得null值。
+</code></pre>
+
+<p><img src="exec.png" /></p>
+<h1>4.表单包含有中文参数值，如何处理?</h1>
+<h2>(1)为什么会有乱码?</h2>
+<p>当提交表单时，浏览器会按照打开该表单所在的页面时的字符集来
+对中文参数值进行编码。比如，使用utf-8来编码，而服务器端默认
+会使用iso-8859-1来解码。所以，会产生乱码。</p>
+<h2>(2)如何解决?</h2>
+<h3>1)get请求</h3>
+<p>可以修改服务器端的配置。</p>
+<p><img src="a1.png" /></p>
+<h3>2)post请求</h3>
+<p>request.setCharacterEncoding(String charset);</p>
+<p><img src="a2.png" />	</p>
+<h1>练习</h1>
+<p><img src="exec2.png" /></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>一个很傻逼的计算器</title>
+<!-- 把字符串转成数值  
+	parseFloat("");
+-->
+<script type="text/javascript">
+	function fn1(number){
+		var input1 = document.getElementById("input1");
+		var input2 = document.getElementById("input2");
+		var d = document.getElementById("d1");
+		var i1 = input1.value;
+		var i2 = input2.value;
+		if(isNaN(i1)||isNaN(i2)||i1==""||i2==""){
+			d.innerText="格式不对哦 ";
+		}else{
+		switch(number){
+			case 1:
+				d.innerText=i1+"+"+i2+"="+(parseFloat(i1)+parseFloat(i2));
+			break;
+			case 2:
+				d.innerText=i1+"-"+i2+"="+(parseFloat(i1)-parseFloat(i2));
+			break;
+			case 3:
+				d.innerText=i1+"*"+i2+"="+(parseFloat(i1)*parseFloat(i2));
+			break;
+			case 4:
+				d.innerText=i1+"/"+i2+"="+(parseFloat(i1)/parseFloat(i2));
+			break;
+		}
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input1">
+	<input type="text" id="input2">
+	<br>
+	<input type="button" value="+" onclick="fn1(1)">
+	<input type="button" value="-" onclick="fn1(2)">
+	<input type="button" value="*" onclick="fn1(3)">
+	<input type="button" value="/" onclick="fn1(4)">
+	<div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>zombie</title>
+<style type="text/css">
+	html{
+		background-image: url(zombimgs/PVZBackground_0.jpg);
+		background-repeat: no-repeat;
+	}
+	img{
+		width:144px;
+		height:166px;
+		position: absolute;
+	}
+	
+	#sh3{
+		float:left;
+		color:#7FFF00;
+	}
+	#fh3{
+		float:right;
+		color:red;
+	}
+</style>
+<script type="text/javascript">
+
+	//声明成功与失败
+	var success = 0;
+	var fail = 0;
+	onload = function(){
+		changeSize();
+	}
+	onresize = function(){
+		changeSize();
+	}
+
+	function changeSize(){
+		var w = document.body.parentElement.clientWidth;
+		var h = document.body.parentElement.clientHeight;
+		document.body.parentElement.style.backgroundSize = w+"px "+h+"px";
+	}
+	
+	
+	var t1 = setInterval(function(){						//定时器1。控制僵尸生成
+		var zombie = document.createElement("img");
+		zombie.src = "zombimgs/zomb"+Math.floor(Math.random()*4)+".png";
+		var y = Math.floor(Math.random()*550);
+		zombie.style.top=y+"px";
+		var x = document.body.parentElement.clientWidth-150;
+		zombie.style.left=x+"px";  
+		document.body.appendChild(zombie);
+		zombie.onmouseover = function(){
+			success++;
+			zombie.parentElement.removeChild(zombie);
+			sh3.innerText="成功次数"+success;
+		}
+	},100);
+	
+	var t2 = setInterval(function(){						//定时器2。控制僵尸行走
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			var oldLeft = parseInt(img.style.left);
+			oldLeft-=2;
+			if(oldLeft<=0){
+				img.parentElement.removeChild(img);
+				//document.body.removeChild(img);
+				fail++;
+				fh3.innerText="失败次数:"+fail;
+			}
+			img.style.left = oldLeft+"px";
+		}
+	},6);
+	
+	var t3 = setInterval(function(){
+		document.body.parentElement.style.backgroundImage = "url('zombimgs/PVZBackground_"+Math.floor(Math.random()*2)+".jpg')";
+	},10000);
+	
+	function stop(){
+		alert("休息一下吧");
+	}
+</script>
+</head>
+<body>
+	<h3 id="sh3">成功次数:0</h3>
+	<h3 id="fh3">失败次数:0</h3>
+	<input type="button" value="暂停" style="position: absolute; right:700px; width:100px; height:50px; border-radius:10px;" onclick="stop()">
+</body>
+</html>

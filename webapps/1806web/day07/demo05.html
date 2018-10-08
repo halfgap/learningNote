@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn(x){
+		var input = document.getElementById("input");
+		var d = document.getElementById("d1");
+		var i = input.value;
+		switch(x){
+		case 1:
+			d.innerHTML+="<p style='font-size: 96px; display: inline;'>"+i+"</p>"
+			break;
+		case 2:
+			d.innerHTML+="<p style='font-size: 48px; display: inline;'>"+i+"</p>"
+			break;
+		case 3:
+			d.innerHTML+="<p style='font-size: 12px; display: inline;'>"+i+"</p>"
+			break;
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input"><br>
+	<input type="button" value="大" onclick="fn(1)">
+	<input type="button" value="中" onclick="fn(2)">
+	<input type="button" value="小" onclick="fn(3)">
+	<div id="d1" ></div>
+</body>
+</html>

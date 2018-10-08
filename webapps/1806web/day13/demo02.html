@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>省市联动 </title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	var arr = [["朝阳","海淀","大兴"],["唐山","秦皇岛","廊坊"],["青岛","烟台","济南"]];
+	
+	function changefn(){
+		$("select:last").html("<option>请选择</option>");
+		var cities = arr[$("select:first").val()];
+		
+		for(var i=0;i<cities.length;i++){
+			var op = $("<option></option>");
+			op.text(cities[i]);
+			
+			//把op添加到s2
+			$("select:last").append(op);
+		}
+	}
+</script>
+</head>
+<body>
+<select onchange="changefn()">
+	<option>请选择</option>
+	<option value="0">北京</option>
+	<option value="1">河北</option>
+	<option value="2">山东</option>
+</select>
+
+<select>
+	<option>请选择</option>	
+</select>
+</body>
+</html>

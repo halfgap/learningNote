@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>sunk the warship</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+        <div id="container">
+
+
+        <div id="siatka">
+            <div id="box">
+                <div id='form'>
+                    <input type="text" placeholder="e.g. B5" id="fireCoords" onKeyPress="enterHandler()">
+                    <input type="button" value="开火！" id="fireButton" onClick="fire()" onKeyPress="enterHandler()" >
+                </div>
+            </div>
+
+            <div id="table-div">
+                <table>
+
+                    <tr>
+                        <th class="tableHeader corner"> </th>
+                        <th class="tableHeader">A</th>
+                        <th class="tableHeader">B</th>
+                        <th class="tableHeader">C</th>
+                        <th class="tableHeader">D</th>
+                        <th class="tableHeader">E</th>
+                        <th class="tableHeader">F</th>
+                        <th class="tableHeader">G</th>
+                        <th class="tableHeader">H</th>
+                        <th class="tableHeader">I</th>
+                        <th class="tableHeader">J</th>
+                    </tr>
+
+                    <tr>
+                        <th class="tableHeader">1</th>
+                        <td id="00"></td>
+                        <td id="01"></td>
+                        <td id="02"></td>
+                        <td id="03"></td>
+                        <td id="04"></td>
+                        <td id="05"></td>
+                        <td id="06"></td>
+                        <td id="07"></td>
+                        <td id="08"></td>
+                        <td id="09"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">2</th>
+                        <td id="10"></td>
+                        <td id="11"></td>
+                        <td id="12"></td>
+                        <td id="13"></td>
+                        <td id="14"></td>
+                        <td id="15"></td>
+                        <td id="16"></td>
+                        <td id="17"></td>
+                        <td id="18"></td>
+                        <td id="19"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">3</th>
+                        <td id="20"></td>
+                        <td id="21"></td>
+                        <td id="22"></td>
+                        <td id="23"></td>
+                        <td id="24"></td>
+                        <td id="25"></td>
+                        <td id="26"></td>
+                        <td id="27"></td>
+                        <td id="28"></td>
+                        <td id="29"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">4</th>
+                        <td id="30"></td>
+                        <td id="31"></td>
+                        <td id="32"></td>
+                        <td id="33"></td>
+                        <td id="34"></td>
+                        <td id="35"></td>
+                        <td id="36"></td>
+                        <td id="37"></td>
+                        <td id="38"></td>
+                        <td id="39"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">5</th>
+                        <td id="40"></td>
+                        <td id="41"></td>
+                        <td id="42"></td>
+                        <td id="43"></td>
+                        <td id="44"></td>
+                        <td id="45"></td>
+                        <td id="46"></td>
+                        <td id="47"></td>
+                        <td id="48"></td>
+                        <td id="49"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">6</th>
+                        <td id="50"></td>
+                        <td id="51"></td>
+                        <td id="52"></td>
+                        <td id="53"></td>
+                        <td id="54"></td>
+                        <td id="55"></td>
+                        <td id="56"></td>
+                        <td id="57"></td>
+                        <td id="58"></td>
+                        <td id="59"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">7</th>
+                        <td id="60"></td>
+                        <td id="61"></td>
+                        <td id="62"></td>
+                        <td id="63"></td>
+                        <td id="64"></td>
+                        <td id="65"></td>
+                        <td id="66"></td>
+                        <td id="67"></td>
+                        <td id="68"></td>
+                        <td id="69"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">8</th>
+                        <td id="70"></td>
+                        <td id="71"></td>
+                        <td id="72"></td>
+                        <td id="73"></td>
+                        <td id="74"></td>
+                        <td id="75"></td>
+                        <td id="76"></td>
+                        <td id="77"></td>
+                        <td id="78"></td>
+                        <td id="79"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">9</th>
+                        <td id="80"></td>
+                        <td id="81"></td>
+                        <td id="82"></td>
+                        <td id="83"></td>
+                        <td id="84"></td>
+                        <td id="85"></td>
+                        <td id="86"></td>
+                        <td id="87"></td>
+                        <td id="88"></td>
+                        <td id="89"></td>
+
+                    </tr>
+                    <tr>
+                        <th class="tableHeader">10</th>
+                        <td id="90"></td>
+                        <td id="91"></td>
+                        <td id="92"></td>
+                        <td id="93"></td>
+                        <td id="94"></td>
+                        <td id="95"></td>
+                        <td id="96"></td>
+                        <td id="97"></td>
+                        <td id="98"></td>
+                        <td id="99"></td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div class="fix"></div>
+        <div class="statki">
+            <ul>
+                <li>战术向导</li>
+                <li id="submarine1">潜艇
+                    <br><span class="small-text">(one-decker)</span></li>
+                <li id="submarine2">潜艇
+                    <br><span class="small-text">(one-decker)</span></li>
+                <li id="destroyer1">驱逐舰
+                    <br><span class="small-text">(two-decker)</span></li>
+                <li id="destroyer2">驱逐舰
+                    <br><span class="small-text">(two-decker)</span></li>
+                <li id="cruiser">巡洋舰
+                    <br><span class="small-text">(three-decker)</span></li>
+                <li id="battleship">战列舰
+                    <br><span class="small-text">(four-decker)</span></li>
+                <li id="AircraftCarrier">航空母舰
+                    <br><span class="small-text">(five-decker)</span></li>
+
+            </ul>
+
+            <div id="logScreen">
+               	 提示：没有船与另一艘船相邻<br>
+                <br>Good luck!
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="trash">
+      <div id="0"></div>
+      <div id="1"></div>
+      <div id="2"></div>
+      <div id="3"></div>
+      <div id="4"></div>
+      <div id="5"></div>
+      <div id="6"></div>
+      <div id="7"></div>
+      <div id="8"></div>
+      <div id="9"></div>
+     <div id="-1"></div>
+     <div id="-2"></div>
+     <div id="-3"></div>
+     <div id="-4"></div>
+     <div id="-5"></div>
+     <div id="-6"></div>
+     <div id="-7"></div>
+     <div id="-8"></div>
+     <div id="-9"></div>     <div id="-01"></div>
+     <div id="-02"></div>
+     <div id="-03"></div>
+     <div id="-04"></div>
+     <div id="-05"></div>
+     <div id="-06"></div>
+     <div id="-07"></div>
+     <div id="-08"></div>
+     <div id="-09"></div>
+     <div id="-10"></div>
+     <div id="-11"></div>
+     <div id="-12"></div>
+     <div id="-13"></div>
+     <div id="-14"></div>
+     <div id="-15"></div>
+     <div id="-16"></div>
+     <div id="-17"></div>
+     <div id="-18"></div>
+     <div id="-19"></div>
+     <div id="-20"></div>
+     <div id="-21"></div>
+     <div id="-22"></div>
+     <div id="-23"></div>
+     <div id="-24"></div>
+     <div id="-25"></div>
+     <div id="-26"></div>
+     <div id="-27"></div>
+     <div id="-28"></div>
+     <div id="-29"></div>
+     <div id="-30"></div>
+     <div id="-31"></div>
+     <div id="-32"></div>
+     <div id="-33"></div>
+     <div id="-34"></div>
+     <div id="-35"></div>
+     <div id="-36"></div>
+     <div id="-37"></div>
+     <div id="-38"></div>
+     <div id="-39"></div>
+     <div id="-40"></div>
+     <div id="-41"></div>
+     <div id="-42"></div>
+     <div id="-43"></div>
+     <div id="-44"></div>
+     <div id="-45"></div>
+     <div id="-46"></div>
+     <div id="-47"></div>
+     <div id="-48"></div>
+     <div id="-49"></div>
+     <div id="-50"></div>
+     <div id="-51"></div>
+     <div id="-52"></div>
+     <div id="-53"></div>
+     <div id="-54"></div>
+     <div id="-55"></div>
+     <div id="-56"></div>
+     <div id="-57"></div>
+     <div id="-58"></div>
+     <div id="-59"></div>
+     <div id="-60"></div>
+     <div id="-61"></div>
+     <div id="-62"></div>
+     <div id="-63"></div>
+     <div id="-64"></div>
+     <div id="-65"></div>
+     <div id="-66"></div>
+     <div id="-67"></div>
+     <div id="-68"></div>
+     <div id="-69"></div>
+     <div id="-70"></div>
+     <div id="-71"></div>
+     <div id="-72"></div>
+     <div id="-73"></div>
+     <div id="-74"></div>
+     <div id="-75"></div>
+     <div id="-76"></div>
+     <div id="-77"></div>
+     <div id="-78"></div>
+     <div id="-79"></div>
+     <div id="-80"></div>
+     <div id="-81"></div>
+     <div id="-82"></div>
+     <div id="-83"></div>
+     <div id="-84"></div>
+     <div id="-85"></div>
+     <div id="-86"></div>
+     <div id="-87"></div>
+     <div id="-88"></div>
+     <div id="-89"></div>
+     <div id="-90"></div>
+     <div id="-91"></div>
+     <div id="-92"></div>
+     <div id="-93"></div>
+     <div id="-94"></div>
+     <div id="-95"></div>
+     <div id="-96"></div>
+     <div id="-97"></div>
+     <div id="-98"></div>
+     <div id="-99"></div>
+     <div id="-100"></div> 
+       
+        <div id="100"></div>
+        <div id="101"></div>
+        <div id="102"></div>
+        <div id="103"></div>
+        <div id="104"></div>
+        <div id="105"></div>
+        <div id="106"></div>
+        <div id="107"></div>
+        <div id="108"></div>
+        <div id="109"></div>
+        <div id="110"></div>
+        <div id="111"></div>
+        <div id="112"></div>
+        <div id="113"></div>
+        <div id="114"></div>
+        <div id="115"></div>
+        <div id="116"></div>
+        <div id="117"></div>
+        <div id="118"></div>
+        <div id="119"></div>
+        <div id="120"></div>
+        <div id="121"></div>
+        <div id="122"></div>
+        <div id="123"></div>
+        <div id="124"></div>
+        <div id="125"></div>
+        <div id="126"></div>
+        <div id="127"></div>
+        <div id="128"></div>
+        <div id="129"></div>
+        <div id="130"></div>
+        <div id="131"></div>
+        <div id="132"></div>
+        <div id="133"></div>
+        <div id="134"></div>
+        <div id="135"></div>
+        <div id="136"></div>
+        <div id="137"></div>
+        <div id="138"></div>
+        <div id="139"></div>
+        <div id="140"></div>
+        <div id="141"></div>
+        <div id="142"></div>
+        <div id="143"></div>
+        <div id="144"></div>
+        <div id="145"></div>
+        <div id="146"></div>
+        <div id="147"></div>
+        <div id="148"></div>
+        <div id="149"></div>
+        <div id="150"></div>
+        <div id="151"></div>
+        <div id="152"></div>
+        <div id="153"></div>
+        <div id="154"></div>
+        <div id="155"></div>
+        <div id="156"></div>
+        <div id="157"></div>
+        <div id="158"></div>
+        <div id="159"></div>
+        <div id="160"></div>
+        <div id="161"></div>
+        <div id="162"></div>
+        <div id="163"></div>
+        <div id="164"></div>
+        <div id="165"></div>
+        <div id="166"></div>
+        <div id="167"></div>
+        <div id="168"></div>
+        <div id="169"></div>
+        <div id="170"></div>
+        <div id="171"></div>
+        <div id="172"></div>
+        <div id="173"></div>
+        <div id="174"></div>
+        <div id="175"></div>
+        <div id="176"></div>
+        <div id="177"></div>
+        <div id="178"></div>
+        <div id="179"></div>
+        <div id="180"></div>
+        <div id="181"></div>
+        <div id="182"></div>
+        <div id="183"></div>
+        <div id="184"></div>
+        <div id="185"></div>
+        <div id="186"></div>
+        <div id="187"></div>
+        <div id="188"></div>
+        <div id="189"></div>
+        <div id="190"></div>
+        <div id="191"></div>
+        <div id="192"></div>
+        <div id="193"></div>
+        <div id="194"></div>
+        <div id="195"></div>
+        <div id="196"></div>
+        <div id="197"></div>
+        <div id="198"></div>
+        <div id="199"></div>
+        <div id="200"></div>
+        
+    </div>
+    
+  
+
+    <script src="js/index.js"></script>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

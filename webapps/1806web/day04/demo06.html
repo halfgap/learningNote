@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- 如何设置元素的显示位置，称为定位
+	1.流定位：浏览器中元素的默认定位
+		1.1：块元素流定位：从上到下依次显示
+		1.2：行内元素流定位：从做到有依次显示
+	利用CSS可以更改元素的定位属性，实现调整元素的显示位置的目的	
+	2.浮动定位：
+		属性:float 值:left,right
+		现象：文字自动绕排，不会被遮挡
+	3.相对定位：
+	4.绝对定位：
+	5.固定定位：
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>定位</title>
+<style type="text/css">
+div{
+	border: 1px solid #00f;
+}
+.root{
+	width:300px;
+}
+.d1, .d2, .d3{
+	height: 50px;
+	width: 80px;
+}
+.d1{
+	float: right;
+}
+.d2{
+	float: right;
+}
+.article img{
+	float: right;
+	border: 1px solid #ddd;
+	padding: 6px;
+	margin: 8px;
+}
+.article{
+	text-indent: 2ed;	/* 首行缩进2个字符宽度 */
+	line-height: 1.6em;	/* 行间距是1.6倍文字高度 */
+}
+</style>
+</head>
+<body>
+	<h1>默认定位-流定位</h1>
+	<h2>上大街上的萨达</h2>
+	<p>我认为<i>刘苍松</i>去教<b>10岁</b>的小学生比较合适</p>
+	<hr>
+	<h1>浮动定位</h1>
+	<div class="root">
+		<div class="d1">d1</div>
+		<div class="d2">d2</div>
+		<div class="d3">d3</div>
+	</div>
+	<hr>
+	<h1>浮动定位的应用</h1>
+	<p class="article">
+	<img alt="" src="../pngs/nigger.jpg">
+	“那个胖虎和技安也真够贱的！每次都被整得那么惨还敢欺负康夫。
+	最不能理解的是经历如此多的不可思议的事情，
+	他们还是以常人的眼光看待多啦A梦，每次多啦A
+	梦掏出来的高科技东西都能震到他们，惊得哇哇乱叫。
+	怎么就不习惯呢？要我早习以为常了……
+　　一路上想吃我的妖精就像胖虎和技安！明知道我是佛主
+派去取经的多啦A梦，还敢对我有想法……纯粹找灭！”
+　　猪八六笑道：“哦，原来你是取经的多啦A梦啊……怪不得脑袋那么大呢！”
+	 </p>
+	 
+	 <hr>
+	
+	 
+</body>
+</html>

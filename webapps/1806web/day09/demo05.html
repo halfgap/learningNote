@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 给窗口添加点击事件 */
+	/* onclick = function(){
+		alert(ip1.value)
+	} */
+	
+//	以下代码执行报错，因为ip1此时还未加载.如果需要页面在加载完后做某些事，要把代码写在onload中。或者 写在下面 
+//	alert(ip1.value);
+	
+// 	给页面添加加载完成事件
+	/* onload = function() {
+		alert(ip1.value);
+	} */	
+	
+// 	给窗口添加获取焦点事件
+	onfocus = function(){
+		console.log("飒飒");
+	}
+// 	给窗口添加失去焦点事件
+	onblur = function(){
+		console.log("hasi");	
+	}
+
+
+</script>
+</head>
+<body>
+	<input type="text" id="ip1" value="good">
+</body>
+</html>

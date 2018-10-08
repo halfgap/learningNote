@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>绝对定位、固定定位</title>
+<style type="text/css">
+	div{
+		border: 1px solid red;
+		width: 100px;
+		height: 100px;
+	}
+	#d1{
+		 position: absolute; 	/* 绝对定位：脱离文档流 ，上下左右值相对于窗口或祖先元素中做过非static定位的元素。 */
+		 left:0px;
+		 top:0px;
+		 
+	}
+	
+	#dad{						/* 祖先元素中做过非static定位的元素 */
+		border: 1px solid blue;
+		width:611px;
+		height:376px;	
+		position: relative;
+		background-image: url("../images/itemCat/study_computer_img1.png");
+		background-repeat: no-repeat;
+		background-size: 318px 319px;
+		background-position: 95% 30%;
+	}
+	#son{
+		position: absolute;
+		left:0px;
+		bottom:0px;
+	}
+	#d3{
+		border: 1px solid green;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+	}
+</style>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<hr>
+	<h2>绝对定位的另一种演示+固定定位(右下角的绿框)</h2>
+	<div id="dad">
+		<div id="son"></div>
+		<div id="d3"></div>			<!-- 固定定位脱离文档流，上下左右的值相对于窗口 -->
+		<div id="d4"></div>
+	</div>
+	<hr>
+	
+	
+	
+</body>
+</html>

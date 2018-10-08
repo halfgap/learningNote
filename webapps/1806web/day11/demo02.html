@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html onmousedown="downfn()" >
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width:200px;
+		height:200px;
+		background-color: red;
+		margin: 100px 0 0 100px;
+	}
+	img{
+		width:50px;
+		height:50px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	function downfn(){
+		console.log("鼠标按下了x="+event.clientX+" y="+event.clientY);
+		var img = document.createElement("img");
+		img.src="../pngs/shu.png";
+		img.style.top=event.clientY+"px";
+		img.style.left=event.clientX+"px";  
+		document.body.appendChild(img);
+	}
+	
+	function upfn(){
+		console.log("鼠标抬起了");
+	}
+	function movefn(){
+		console.log("鼠标按下了x="+event.clientX+" y="+event.clientY);
+		var img = document.createElement("img");
+		img.src="../pngs/shu.png";
+		img.style.top=event.clientY+"px";
+		img.style.left=event.clientX+"px";  
+		document.body.appendChild(img);
+	}
+	
+	setInterval(function(){
+		var img = document.createElement("img");
+		img.src="../pngs/shu.png";
+		var y = Math.floor(Math.random()*1000);
+		var x = Math.floor(Math.random()*1000);
+		img.style.top=y+"px";
+		img.style.left=x+"px";  
+		document.body.appendChild(img);
+	},10);
+</script>
+</head>
+<body >
+	<div  onmouseup="upfn()" onmousemove="movefn()">
+	</div>
+</body>
+</html>

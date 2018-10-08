@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>练习</title>
+</head>
+<body>
+	<h3 align="center">注册表单</h3> 
+	<form action="http://www.baidu.com">
+	<table border="1" cellspacing="0" width="500" align="center">
+		<tbody>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text"  name="username" maxlength=10    placeholder="用户名"></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="password" placeholder="密码" maxlength=10></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" name="password" placeholder="密码" maxlength=10></td>
+			</tr>
+			<tr>
+				<td>昵称：</td>
+				<td><input type="text" name="nickname" placeholder="昵称" maxlength=10></td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td><input type="radio" name="gender" value="man" id="nan" checked="checked"><label for="nan">男</label>
+				<input type="radio" name="gender" value="women" id="nv"><label for="nv">女</label>
+				</td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td><input type="checkbox" name="hobby" value="sport" id="s"><label for="s">运动</label> 
+					<input type="checkbox" name="hobby" value="internet" id="i"><label for="i">上网</label>
+					<input type="checkbox" name="hobby" value="music" id="m"><label for="m">音乐</label>
+					<input type="checkbox" name="hobby" value="game" id="g"><label for="g">游戏 </label></td>
+			</tr>
+			<tr>
+				<td>生日：</td>
+				<td><input type="date" name="birthday"></td>
+			</tr>
+			<tr>
+				<td>头像：</td>
+				<td><input type="file" name="pic"></td>
+			</tr>
+			<tr>
+				<td>城市：</td>
+				<td><select name="city">
+						<option>请选择</option>
+						<option value="bj" selected="selected">北京</option>
+						<option value="ss">上海</option>
+						<option value="gz">广州</option>
+						<option value="sz">深圳</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td>自我介绍：</td>
+				<td><textarea rows="3" cols="20" name="intro">这家伙很懒，什么都没写</textarea></td>
+			</tr>
+			<tr>
+				<td>验证码</td>
+				<td><img src="z.png"></td>
+			</tr>
+			<tr >
+				<td colspan="2" align="center"><input type="submit" value="注册">
+				<input type="reset" value="重置">
+				</td>
+			</tr>
+		
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>消除浮动影响</title>
+<style type="text/css">
+.menu .item{
+	width:80px;
+	height:40px;
+	text-align: center;
+	bcakground-color: #eee;
+	float: left;
+	border: 1px solid #000;
+}
+.menu{
+	border: 1px solid #00f;
+}
+
+</style>
+</head>
+<body>
+	<h1>消除浮动影响</h1>
+	<div class="menu">
+		<div class="item">HOME</div>
+		<div class="item">关于我们</div>
+		<div style="clear:both"></div>
+	</div>
+	<h2>sadasd</h2>
+	<p>
+		这样会得到我们希望的文字效果，不幸的是，下一个元素会收到这个浮动元素的影响。
+		为了解决这个问题，有些人选择对布局中的所有东西进行浮动，
+		然后使用适当的有意义的元素（通常是站点的脚本）对这些浮动进行清理
+		这有助于减少或消除不必要的标记。事实上，w3school站点上的所有页面都采用了这种技术
+		如果您打开我们使用的css文件，您会看到我们队页脚的div进行了清理，而页脚上的三个div都向左浮动
+	</p>
+</body>
+</html>

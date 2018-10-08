@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>轮播</title>
+<style type="text/css">
+	img{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	var imgs = document.getElementsByTagName("img");
+	
+	setInterval(br,2000);
+	var time = 0;
+	function br(){
+		time++;
+		if(time%3==1){
+			imgs[0].style.display = "inline";
+			imgs[1].style.display = "none";
+			imgs[2].style.display = "none";
+		}else if(time%3==2){
+			imgs[0].style.display = "none";
+			imgs[1].style.display = "inline";
+			imgs[2].style.display = "none";
+		}else{
+			imgs[0].style.display = "none";
+			imgs[1].style.display = "none";
+			imgs[2].style.display = "inline";
+		}
+	}
+</script>
+</head>
+<body>
+	<img src="../pngs/eyes.png" >
+	<img src="../pngs/eyesclose.png" >
+	<img src="../pngs/shu.png" style="width:600px; height:640px;">
+</body>
+</html>

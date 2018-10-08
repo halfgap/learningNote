@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [23,15,2,100,30,8];
+	
+	function mysort(a,b){
+		//升序
+		return a-b;
+		//降序
+		//return b-a;
+	}
+	arr.sort(mysort);
+	alert(arr);
+	
+	
+	/* 如果数组中保存的对象的话，通过以下方式进行排序
+	var person = [p1,p2,p3,p4]
+	function mysort(a,b){
+		//升序
+		return a.age-b.age;
+		//降序
+		//return b.age-a.age;
+	}
+	arr.sort(mysort); */
+</script>
+</head>
+<body>
+	
+</body>
+</html>

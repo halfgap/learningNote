@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>增强</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#add").click(function(){
+			var input = $("#input")
+			$("ul").append("<li>"+input.val()+"</li>");
+		});
+		
+		$("#insert").click(function(){
+			var input = $("#input")
+			$("#didi").after("<li>"+input.val()+"</li>");
+		});
+		
+		$("#del").click(function(){
+			var str = $("#input").val();
+			$("li:contains('"+str+"')").remove();
+		});
+		
+	});
+	
+
+ 
+</script>
+</head>
+<body>
+	<input type="text" id="input">
+	<input type="button" value="增加" id="add">
+	<input type="button" value="插入" id="insert">
+	<input type="button" value="删除" id="del">
+	<hr>
+	<ul id="ul">
+		<li>北京</li>
+		<li id="didi">上海</li>
+		<li>广州</li>
+	</ul>
+	
+</body>
+</html>

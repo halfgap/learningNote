@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>my computer</title>
+<link href="css/img.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<div id="ip" style="text-align: center; line-height:100px; color:white">
+  			你好！
+  		</div>
+  		<div onclick="openNav2()"><img src="imgs/doc.png"><span>摘记</span></div>
+  		<div onclick="openNav3()"><img src="imgs/game.png"><span>游戏</span></div>
+  		<div onclick="openNav4()"><img src="imgs/study.png"><span>学习笔记</span></div>
+  		<div onclick="openNav5()"><img src="imgs/favo.png"><span>私藏品</span></div>
+  		<div onclick="openNav6()"><img src="imgs/option.png"><span>设置</span></div>
+	</div>
+	
+	<div id="mySidenav2" class="sidenav">
+		<p>每一个人都有属于自己的一片森林，迷失的人迷失了，相逢的人会再相逢。
+如果我爱你，而你也正巧的爱我。你头发乱了时候，我会笑笑的替你拨一波，然后，手还留恋的在你发上多待几秒。但是，如果我爱你，而你不巧的不爱我。你头发乱了，我只会轻轻的告诉你，你头发乱了喔。这大概是最纯粹的爱情观，如若相爱，便携手到老;如若错过，便护他安好。
+尽管世界上有那般广阔的空间，而容纳你的空间——虽然只需一点点——却无处可寻。
+于是我关闭我的语言，关闭我的心，深沉的悲哀是连眼泪这形式都无法采取的东西。
+你要做一个不动声色的大人了。不准情绪化，不准偷偷想念，不准回头看。去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。我一直以为人是慢慢变老的，其实不是，人是一瞬间变老的。</p>
+	</div>
+	<div id="mySidenav3" class="sidenav">
+		<div class="d1"><img src="imgs/div1.png" title="超级玛丽"></div>
+		<div class="d1"></div>
+		<div class="d1"></div>
+		<div class="d1"><img src="imgs/div2.png" title="飞车"></div>
+		<div class="d1"><img src="imgs/div3.png" title="使命召唤9"></div>
+		<div class="d1"></div>
+		<div class="d1" style="width:582px; border-radius:10px;"><img id="dd" src="imgs/div4.png" title="看门狗"></div>
+	</div>
+	<div id="mySidenav4" class="sidenav">
+		<a href="../webapps/Web/index.html" target="_blank" >Web学习记录</a>
+		<a href="../webapps/Sql/index.html" target="_blank">SQL学习记录</a>
+		<a href="../webapps/jdbc/index.html">JDBC学习记录</a>
+		<a href="../webapps/servlet/index.html">servlet学习记录</a>
+	</div>
+	<div id="mySidenav5" class="sidenav"></div>
+	<div id="mySidenav6" class="sidenav"></div>
+	<!-- 目录一 -->
+	<div class="fold" >
+		<a onclick="window.location.href='game.html'">
+		<img title="test" src="imgs/fol1.png" class="fol"></a>
+		<p>游戏</p>
+		
+	</div >
+	<!-- 目录二 -->
+	<div class="fold">
+		<a onclick="window.location.href='app.html'">
+		<img title="test" src="imgs/fol2.png" class="fol"></a>
+		<p>软件</p>
+	</div>
+	<!-- 目录三 -->
+	<div class="fold">
+		<a onclick="window.location.href='doc.html'">
+		<img title="test" src="imgs/fol5.png" class="fol"></a>
+		<p>文档</p>
+	</div>
+	<!-- 菜单栏 -->
+	<div id="kaishi">
+		<!-- 开始菜单 -->
+		<div id="kaishi1" style="font-family:'方正准圆_GBK','微软雅黑' ; font-size:30px;cursor:pointer" onclick="openNav()">菜单
+		</div>
+		<!-- 时间 -->
+		<div id="kaishi2">
+		</div>
+	</div>
+	<div id="mainEgg">
+		<div id="egg"></div>
+	</div>
+	<script type="text/javascript" src="js/nav.js"></script>	<!-- 菜单栏相关js -->
+</body>
+</html>

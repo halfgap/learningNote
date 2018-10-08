@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	html{
+		background-image: url(imgs/003.jpg);
+		background-repeat: no-repeat;
+	}
+	img{
+		width:80px;
+		height:80px;
+		position: absolute;
+	}
+	#winh3{
+		float: left;
+		color: #7FFF00;
+		background-color: rgba(0,0,0,0.3);
+	}
+	#super1{
+		float: left;
+		color: #FF8C00;
+		background-color: rgba(0,0,0,0.3);
+	}
+	#loseh3{
+		float: right;
+		color: red;
+		background-color: rgba(0,0,0,0.3);
+	}
+	
+	#up{
+		width:40px;
+		height:40px;
+		position: absolute;
+		left : 180px;
+		top:20px;
+		background-color: rgba(255,255,255,0.7); 
+		border-radius :10px;
+	}
+	#down{
+		width:40px;
+		height:40px;
+		position: absolute;
+		left : 250px;
+		top:20px;
+		background-color: rgba(255,255,255,0.7);
+		border-radius :10px;
+	}
+	div>img:HOVER{
+		cursor: pointer;
+	}
+</style>
+<script type="text/javascript">
+	var w = 0;		//背景
+	var h = 0;		
+	var win = 0;	//显示击破和未击破
+	var lose = 0 ;
+	onload = function(){
+		change();
+		var count = 10;  //超级武器限制
+		up.onclick = function(){
+			count--;
+			if(count>=0){
+				var dels = document.body.getElementsByClassName("my");
+				for(var i=0;i<dels.length;i++){
+					var del = dels[i];
+					del.parentElement.removeChild(del);
+					win++;
+					winh3.innerText = "击杀数:"+win;	
+					super1.innerText = "炸弹数:"+count;	
+				}
+			}
+		}
+		
+		
+		down.onclick = function(){
+			document.body.parentElement.style.backgroundImage = "url(imgs/00"+Math.floor(Math.random()*6)+".jpg)";
+		}
+	}
+	
+	onresize = function(){
+		change();
+	}
+	function change(){
+		w = document.body.parentElement.clientWidth;
+		h = document.body.parentElement.clientHeight;
+		document.body.parentElement.style.backgroundSize=w+"px "+h+"px";
+	}
+	
+	//定时器1
+	var t1 = setInterval(function(){
+		var img = document.createElement("img"); 
+		img.src = "imgs/a"+Math.floor(Math.random()*6)+".png";
+		img.setAttribute("class","my")
+		document.body.appendChild(img);
+		img.style.left = (w-100)+"px";
+		img.style.top = (50+Math.floor(Math.random()*(h-140)))+"px"
+		img.onmouseover = function(){
+			win++;
+			document.body.removeChild(img);
+			winh3.innerText = "击杀数:"+win;
+		}
+		
+	},200);
+	//定时器2
+	var t2 = setInterval(function(){
+		var imgs = document.body.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			var oldLeft = parseInt(img.style.left);
+			oldLeft-=2;
+			if(oldLeft<=0){
+				lose++;
+				document.body.removeChild(img);
+				loseh3.innerText = "逃亡:"+lose;
+			}
+			img.style.left = oldLeft+"px";
+		}
+		
+	},15);
+	
+	
+</script>
+</head>
+<body>
+	<h3 id="winh3">击杀数:0</h3>
+	<h4 id="super1">炸弹数:10</h4>
+	<h3 id="loseh3">逃亡数:0</h3>
+	<div>
+		<img title="消灭部分敌人 " src="imgs/levelup.png"  id="up"> 
+		<img title="更换背景" src="imgs/leveldown.png"  id="down">
+	</div>
+</body>
+</html>

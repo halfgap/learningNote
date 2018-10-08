@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模拟事件和鼠标移入移出事件</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	function myfn(){
+		alert("试试就试试");
+	}
+	
+	setTimeout(function(){
+		//模拟事件
+		$("input").trigger("click");
+	},3000);
+	
+	$(function(){
+		//复合事件,鼠标移入移出事件
+		$("div").hover(function(){
+			$("div").css("color","red");
+		},function(){
+			$("div").css("color","blue");
+		});
+	})
+</script>
+</head>
+<body>
+<input type="button" value="点我试试" onclick="myfn()">
+<div>
+	我是一个冷酷的div
+</div>
+</body>
+</html>

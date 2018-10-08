@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- alt： 当图片不能正常显示的时候显示此内容 -->
+	<!-- src: 图片路径
+	1.相对路径 ：显示站内资源  
+	
+	a.图片和页面同一目录，直接写图片名称  xiao.png     b.图片在页面的上级目录， ../xiao.png  c.图片在目录的下级目录  abc/xiao.png
+	2.绝对路径: 显示站外资源，通常以http开头
+	 -->
+	 <!-- title:鼠标悬停时显示的内容 -->
+	 <!-- width/height 值为像素px或百分比 如果只设置宽，则高度会等比缩放。
+	 百分比会根据页面大小自动缩放大小
+	 -->
+	<p align="center"><img alt="图片加载失败" title="这是个标题" width=125px src="xiao.png"></p>
+	<p align="center"><img alt="图片加载失败" width=100px src="../xiao.png"></p>
+	<p align="center"><img alt="图片加载失败" width=75px src="png/xiao.png"></p>
+	<p align="center"><img alt="图片加载失败" width=50px src="../pngs/xiao.png"></p>
+	<p align="center"><img title="骚猪"  src="https://pic2.zhimg.com/v2-708e653b88955992232d98d58c242341_b.jpg"></p>
+	
+  	
+  	
+</body>
+</html>

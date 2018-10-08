@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>更改显示方式</title>
+<style type="text/css">
+.form{
+	border: 4px solid 	#FF44AA;
+	width: 370px;
+	/* 左右设置auto,自动居中计算外边距 
+		经过计算，可以实现box模型(此处即form)的居中效果
+	*/
+	margin: 80px auto 0;
+	background-color: 	#eee;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.form h2{
+	text-align: center;
+	background-color: #FFB7DD;
+	color: #000;
+	/* 消除默认的外边距 */
+	margin: 0;
+	/* 设置内边距，为标题文字 上下留白 */
+	padding: 8px 0;
+}
+.form-field label{
+	/* 设置显示方式
+		inline:行内元素，不能设置宽高 
+		inline-block:行内块，能够设置宽高
+		block:块元素，能够设置宽高
+		 */
+	display:inline-block;
+	width:60px;
+}
+.form-field input{
+	/* input是行内块元素，可以直接设置高 */
+	width: 100px;
+}
+
+.form-field{
+	margin: 10px 8px;
+	
+}
+.buttons{
+	padding:10px 0;
+	/* 按钮是行内元素，text-align可以实现盒子中的行内元素居中显示 */
+	text-align: center;
+	/* background-color: #FFB7DD; */
+}
+.buttons input{
+	background-color: #FFCCCC ;
+	border: 4px;
+	border-radius: 8px;
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+	<h1 align="center">更改显示方式</h1>
+	<form class="form" action="">
+		<h2>登录</h2>
+		<div class="form-field">
+			<label>用户名</label>
+			<input type="text">
+			<span>8~10个字母</span>
+		</div>
+		<div class="form-field">
+			<label>密码</label>
+			<input type="password">
+			<span>8~10个数字或字母</span>
+		</div>
+		<div class="buttons">
+			<input type="submit" value="登录">
+		</div>
+	</form>
+</body>
+</html>

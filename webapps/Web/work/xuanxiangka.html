@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style type="text/css">
+ 
+        *{               /*清除所有默认的内外边距，设置字体格式*/
+            margin:0;
+            padding:0;
+            font-size:15px;
+            font-family:"微软雅黑";
+        }
+        ul{
+            list-style-type:none;/* 所有的list选项都没有前面的点 */ 
+        }
+        a{
+            text-decoration:none;/* 所有的连接都没有下划线 */ 
+            color:black;
+        }
+        .main{			/*这是选项卡最外层包裹的div*/
+            width:310px;	/*定义大小*/
+            height:200px;
+            margin:0 auto;	/*这样能够居中*/
+            margin-top:15px;
+        }
+        #titleCard{		
+            width:302px;	/*宽度，注意这个宽度的设置要与下面content宽度的设置相对应*/
+            height:32px;	/*高度，这个高度要考虑ul的border-bottom能够与它里面的li的border-bottom重合的问题*/
+        }
+        #titleCard li{
+            display:inline-block;	/*li本身是竖排的，这个属性能够让它们横着排列*/
+            border-bottom:none;		/*无底边线,被选中的li才有底边线*/
+            width:70px;
+            height:30px;		/*这个高度与ul的高度相关，要能底边重合才行。*/
+            text-align:center;		/*文字水平居中*/
+            line-height:30px;		/*文字的行高与容器高度相同能够让文字垂直居中*/
+            margin-left:5px;
+            border-radius: 4px 4px 0 0;
+            background-color: #FFE4B5;
+        }
+        #titleCard li.liActive{		
+            border-bottom:2px solid #FFE4B5;	/*下面的边框变白色，加粗，刚好能够覆盖住ul的底边，显得有缺口的样子*/
+        }
+        #titleCard li:hover{	
+            cursor:pointer;
+         } 
+         #content div{
+         width:300px; 
+         height:150px; 
+         border-top:none; 
+         border-radius: 0 0 4px 4px;
+         background-color: rgba(255,140,0,0.4);
+         } 
+         
+         #content div ul li { 
+             line-height:2em; 
+             text-indent:8px;/*文本缩进*/
+         } 
+        .show{ display:block; 
+         } 
+        .hide{ display:none;  /*visibility:hidden 这种隐藏占地方*/} 
+ 
+ </style> 
+ <script type="text/javascript"> 
+     window.onload = function(){ 
+	//获得titleCard的子标签数组，该变量会一直存在，不会因为onload运行结束而消失，神奇！ 
+        var titleCardChildren=document.getElementById("titleCard").children; 
+	//获得content的子标签数组，该变量会一直存在，不会因为onload运行结束而消失，神奇！ 
+        var contentChildren=document.getElementById("content").children; //alert(); 
+        for(var i=0;i<titleCardChildren.length;i++) { 
+	    //为每个titleCard的子标签添加index属性，记录该li的序号
+            titleCardChildren[i].index=i; 
+	    titleCardChildren[i].onclick=function(){//为每个li添加onclick方法，每当这个li被点击时，就会运行这个方法里面的内容 
+        	for(var j=0;j<contentChildren.length;j++)//遍历content的子标签 
+           	 { 
+            	    contentChildren[j].className="hide";//将所有的content的子标签都隐藏 
+                    titleCardChildren[j].className="";//将所有titleCard的子标签的className值都去掉 
+            	} 
+            contentChildren[this.index].className="show";//显示被点击的这个content子标签
+            titleCardChildren[this.index].className="liActive";//改变被点击的titleCard的子标签的css 
+        }  
+       } 
+     } 
+</script> 
+ </head>
+ <body>
+ <div class="main"> 
+     <ul id="titleCard"> 
+        <li class="liActive">1</li><li>2</li><li>3</li> 
+     </ul>
+ <div id="content"> 
+     <div class="show"> 
+         <ul> 
+             <li><a href="#">1</a></li> 
+             <li><a href="#">2</a></li> 
+             <li><a href="#">3</a></li> 
+             <li><a href="#">4</a></li> 
+         </ul> 
+     </div><!--show end--> 
+     <div class="hide"> 
+         <ul> 
+             <li><a href="#">2.1</a></li> 
+             <li><a href="#">2.2</a></li> 
+             <li><a href="#">2.3</a></li> 
+             <li><a href="#">2.4</a></li> 
+         </ul> 
+     </div><!--hide end--> 
+     <div class="hide"> 
+         <ul> 
+             <li><a href="#">3.1</a></li> 
+             <li><a href="#">3.2</a></li> 
+             <li><a href="#">3.3</a></li> 
+             <li><a href="#">4.4</a></li> 
+         </ul> 
+     </div><!--hide end--> 
+ </div><!--content end--> 
+ </div><!-- main end --> 
+ </body>

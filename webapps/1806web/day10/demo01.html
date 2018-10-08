@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>轮播</title>
+<style type="text/css">
+img{
+	display:none;
+}
+</style>
+<script type="text/javascript">
+	var count = 0;
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		imgs[0].style.display="inline-block";
+	}		
+	setInterval(function(){
+		var imgs = document.getElementsByTagName("img");
+		count++;
+		var visibleIndex = count%imgs.length;
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			if(i==visibleIndex){
+				img.style.display="inline-block";
+			}else{
+				img.style.display="none";
+			}
+		}	
+	},2000);
+	
+</script>
+</head>
+<body>
+<div>
+	<img src="../pngs/eyes.png" >
+	<img src="../pngs/eyesclose.png" >
+	<img src="../pngs/shu.png" style="width:600px; height:640px;">
+	<h1>基于老师代码，是不会在开始时无图片显示</h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>web11</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>DOM</h3>
+<h4>查找元素的几种方式</h4>
+<ol>
+<li>通过id  document.getElementById(&quot;id&quot;);</li>
+<li>通过标签名 document.getElementsByTagName(&quot;div&quot;);</li>
+<li>通过name document.getElementsByName(&quot;gender&quot;);</li>
+<li>通过class document.getElementsByClassName(&quot;class&quot;);</li>
+<li>上级元素  parentElement</li>
+<li>下级元素们  childNodes</li>
+</ol>
+<h4>创建元素</h4>
+<pre><code>document.createElement(&quot;div&quot;)
+</code></pre>
+
+<h4>添加元素</h4>
+<pre><code>父元素.appendChild(新元素)
+</code></pre>
+
+<h4>插入元素</h4>
+<pre><code>父元素.insertBefore(新元素，弟弟元素);
+</code></pre>
+
+<h4>删除元素</h4>
+<pre><code>父元素.removeChild(被删除的元素);
+</code></pre>
+
+<h4>修改元素的文本内容</h4>
+<pre><code>innerText()
+</code></pre>
+
+<h4>修改元素内部的html内容</h4>
+<pre><code>innerHTML()
+</code></pre>
+
+<h4>修改元素的样式</h4>
+<pre><code>元素对象.style.样式名称=&quot;样式的值&quot;;
+</code></pre>
+
+<h3>事件</h3>
+<ul>
+<li>
+<p>onclick点击事件 onload加载完成事件 onfocus 获取焦点事件 onblur失去焦点事件 onmouseover鼠标移入事件 onmouseout 鼠标移除事件，onchange 值改变事件  onsubmit 提交事件</p>
+</li>
+<li>
+<p>什么是事件：代表了某些特定的时间点，包括状态改变事件，鼠标事件，键盘事件</p>
+</li>
+<li>
+<p>鼠标相关事件：onclick鼠标点击事件 onmouseover鼠标移入事件 onmouseout 鼠标移出事件 onmousedown鼠标按下事件 onmouseup鼠标抬起事件 onmousemove鼠标移动事件</p>
+</li>
+<li>
+<p>键盘相关事件： onkeydown(键盘按下) onkeyup(键盘抬起)</p>
+</li>
+<li>
+<p>状态改变事件：onload（页面加载完）onchange(值发生改变) onblur(失去焦点) onfocus(获取焦点) onsubmit(提交) onresize(窗口尺寸发生改变事件)</p>
+</li>
+<li>
+<p>事件取消: 通过给啥时间函数返回false   return false;取消事件</p>
+</li>
+<li>
+<p>以下代码获取窗口的宽高：</p>
+<p>document.body.parentElement.clientWidth
+document.body.parentElement.clientHeight</p>
+</li>
+</ul>
+<h3>事件绑定</h3>
+<ol>
+<li>
+在元素中添加事件属性 在事件对于的函数中 this代表的是window对象
+<input type="button" value="元素绑定事件" 
+onclick="fn1()">
+</li>
+<li>
+通过js代码动态绑定事件 js代码和html代码分离 便于升级和维护，在事件对于的函数中 this代表的是事件源
+mybtn.onclick = function(){
+		alert(&quot;动态绑定成功！&quot;);
+}
+</li>
+</ol>
+<h3>event对象</h3>
+<ol>
+<li>event对象中保存着和事件相关的信息</li>
+<li>通过event可以获得鼠标事件的坐标 event.clientX/Y</li>
+<li>通过event可以获得键盘事件的字符编码 event.keyCode </li>
+<li>
+通过event可以获得事件源 不同浏览器存在兼容性问题，支持两种写法： 
+var obj = event.target; 
+var obj = event.srcElement
+</li>
+<li>
+以下代码可以解决兼容性问题
+var obj = event.target||event.srcElement;
+</li>
+</ol>
+<h4>僵尸练习步骤：</h4>
+<ol>
+<li>创建demo06，通过css给html添加背景图片，在页面加载完成的时候获取窗口的宽高，把宽高设置到背景图片上面</li>
+<li>在script标签中添加定时器t1每个100毫秒创建一个img添加到body中，通过img.src=&quot;a.jpg&quot;形式给img设置显示图片，通过css样式选取所有的img，设置宽高，绝对定位  left的值为动态获取的屏幕的宽度，top的值为随机值（保证图片显示在屏幕范围内的随即值）</li>
+<li>在script标签中添加定时器t2每隔10毫秒执行一次，每次执行时获取页面中所有的img元素 然后for循环遍历每一个让每一个的left的值-=5</li>
+<li>在body里面通过html代码在左上角添加h3内容为成功次数：0 右上角添加h3内容为失败次数0，在script标签中声明两个全局的变量表示成功次数和失败次数(var success=0; var fail=0;)</li>
+<li>每次移动图片的时候判断图片的的位置是否移出窗口如果移出则删除图片并且让fail++ 显示到页面中</li>
+<li>在第二部创建img对象的时候给img动态绑定onmouseover事件，在事件中删除图片并且让seccess++ 显示到页面中 搞定！</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

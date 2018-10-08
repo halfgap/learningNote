@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width:700px;
+		height:400px;
+		position: relative;
+  		overflow: hidden;  
+	}
+	img{
+		width:700px;
+		height:400px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.left=i*700+"px";
+		}
+	}
+	setInterval(function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			var oldLeft = parseInt(img.style.left);
+			oldLeft-=2;
+			if(oldLeft<=-700){
+				oldLeft = (imgs.length-1)*700;
+			}
+			img.style.left = oldLeft+"px";
+		}
+	},10);
+</script>
+</head>
+<body>
+<div>
+	<img src="1.jpg">
+	<img src="2.jpg">
+	<img src="3.jpg">
+	<h1>实现该种效果的轮播</h1>
+</div>
+</body>
+</html>

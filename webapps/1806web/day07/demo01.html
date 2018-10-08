@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 第一种方式 */
+//1.无参无返回
+	function fn1(){
+		alert("我是无参无返回的函数 ");
+}
+	//fn1();
+	
+//2.无参有返回
+	function fn2(){
+		return "abc ";
+}
+    //var s = fn2();
+	//alert(s); 
+	
+//3.有参无返回
+	function fn3(name){
+		alert(name);
+}
+	//fn3("jay");
+	
+//4.有参有返回
+	function fn4(x,y){
+		return x*y;
+}
+	//var result = fn4(4,5);
+	//alert(result);
+	
+/* 第二种方式 */
+	var fn5 = function(){
+		alert("第二种函数执行方式");
+}
+	//fn5();
+ 
+</script>
+</head>
+<body>
+	<input type="button" value="调用fn1" onclick="fn1()">
+	<input type="button" value="调用fn2" onclick="alert(fn2())">
+	<input type="button" value="调用fn3" onclick="fn3('aaaaa')">
+	<input type="button" value="调用fn4" onclick="alert(fn4(5,7))">
+	<input type="button" value="调用fn5" onclick="fn5()">
+</body>
+</html>

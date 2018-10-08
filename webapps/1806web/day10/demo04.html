@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>电子时钟</title>
+<script type="text/javascript">
+	setInterval(function(){
+		var d = new Date();
+		t.innerText = d.toLocaleTimeString();
+	},1000);
+	
+	var i;
+	function fn(){
+		clearInterval(i);
+		var time = input.value*60;
+		i = setInterval(function(){
+			time-=0.1;
+			
+			if(time<=0){
+				
+				clearInterval(i);
+				d.innerText = "时间到!";
+				var count = 0;
+				setInterval(function(){
+					count++;
+					if(count%2==0){
+						d.style.color="red";
+					}else{
+						d.style.color="blue";
+					}
+				},1000);
+				
+				return;
+			}
+			d.innerText = time.toFixed(1);
+		},100);
+	}
+	//只执行一次的定时器
+	setTimeout(function(){
+		img.style.display = "inline";
+		
+	},3000)
+</script>
+</head>
+<body>
+	<h1 id="t"></h1>
+	<input type="text" placeholder="请输入倒计时时间" id="input">
+	<input type="button" value="开始" onclick="fn()">
+	<div id="d" style="font-size:72px; color:red; "></div>
+	<img src="../pngs/shu.png" style="width:400px; height:440px; display:none;" id="img";>
+</body>
+</html>

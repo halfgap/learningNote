@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件传递(事件冒泡)</title>
+<script type="text/javascript">
+	
+	
+</script>
+<style type="text/css">
+	div{
+		border: 1px solid red;
+	}
+	p{
+		border: 1px solid blue;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		if(event.target.nodeName=="INPUT"){
+			alert(event.target.value);
+		}
+		
+	}
+</script>
+</head>
+<body>
+<div onclick="myfn()">
+	<p>
+		<input type="button" value="click1">
+		<input type="button" value="click2">
+	</p>
+
+</div>
+
+</body>
+</html>
+
+

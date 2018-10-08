@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input{
+		width:100px;
+		height:50px;
+		border-radius : 10px;
+		background-color: #008CBA;
+		border: none;
+   	 	color: white;
+		font-size: 18px;
+	}
+	input:HOVER{
+		background-color:#00FFFF;
+		cursor: pointer;
+	}
+	img{
+		width:300px;
+		height:300px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	function fn1(){
+		$("img").hide(2000,function(){
+			$("img").show(1000)
+		});
+	}
+	
+	function fn2(){
+		$("img").show(1000);
+	}
+	
+	function fn3(){
+		 setInterval(function(){
+			$("img").slideUp(1000,function(){
+				$("img").slideDown(1000);
+		},2000);
+		
+		});
+	}
+	
+	function fn4(){
+		$("img").slideDown(1000);
+	}
+	
+	function fn5(){
+		$("img").fadeOut(1000);
+	}
+	
+	function fn6(){
+		$("img").fadeIn(1000);
+	}
+	
+	function fn7(){
+		$("img").animate({"left":"600px"},1000).animate({"top":"400px"},1000)
+		.animate({"left":"0"},1000).animate({"top":"100"},1000).fadeOut(2000);
+	}
+</script>
+</head>
+<body>
+<input type="button" value="隐藏" onclick="fn1()">
+<input type="button" value="显示" onclick="fn2()">
+<input type="button" value="滑出" onclick="fn3()">
+<input type="button" value="滑入" onclick="fn4()">
+<input type="button" value="淡出" onclick="fn5()">
+<input type="button" value="淡入" onclick="fn6()">
+<input type="button" value="自定义" onclick="fn7()">
+<hr>
+<img src="imgs/levelup2.png">
+</body>
+</html>

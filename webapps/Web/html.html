@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html目录</title>
+<style type="text/css">
+	body {
+    font-family: "方正准圆_GBK","Lato", sans-serif;
+    background: url("2.jpg") fixed center center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+     background-color: rgba(0,0,0,0.5);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#button
+{
+	-webkit-appearance:button; 
+	background-color: #FFFAFA;
+	border: none;
+    color: #000;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 33px;
+    font-size:20px;
+}
+#button:HOVER {
+	cursor: pointer;
+	background-color: #F0FFFF;
+}
+li{
+	font-size:20px;
+	list-style-type: none;
+}
+#btn{
+	width:25px;
+	
+}
+#webDemo{
+	display:none;
+	width:300px;
+	height:300px;
+	background-image : url('paper.png');
+	background-position : center;
+/* 	background-color: rgba(0,0,0,0.4); */
+	position: relative;
+	top: -500px;
+    left: 400px;
+    border-radius: 40px ;
+    text-align: center;
+    overflow: auto;
+    opacity: 0.95;
+}
+#webDemo>a{
+	color:black;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="dayWeb/web01.html" target="_blank" style="color:white;">web01</a>
+  <a href="dayWeb/web02.html" target="_blank" style="color:white;">web02</a>
+</div>
+
+<div id="main">
+  <h2>HTML</h2> 
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img id="btn" src="btn.png"> 点击打开档案</span><br>
+  <span  onclick="showOtherDiv()" style="font-size:30px;cursor:pointer"><img id="btn" src="btn2.png"> 点击打开各类demo</span><br>
+    <div>
+  	<ul>
+  		<li><a href="dayWeb/web01.html" style="text-decoration: none; color:black; font-weight: bold;" target="_blank">web01</a>
+  			<ul>
+  				<li>HTML页面结构</li>
+  				<li>文本标签</li>
+  				<li>列表标签</li>
+  				<li>元素(标签)的分类</li>
+  				<li>常见特殊字符</li>
+  				<li>图片 img与图片地图</li>
+  			</ul>
+  		</li>
+  		<li><a href="dayWeb/web02.html" style="text-decoration: none; color:black; font-weight: bold;" target="_blank">web02</a>
+  			<ul>
+  				<li>超链接 a</li>
+  				<li>表格标签</li>
+  				<li>表单相关</li>
+  			</ul>
+  		</li>
+  	</ul>
+  	
+  </div>
+  <br><br><br><br>
+ 	<a id="button" href="http://www.runoob.com/html/html-tutorial.html" target="_blank">HTML教程</a> <a id="button" href="index.html">返回主页</a>
+	 	<div id="webDemo" >
+ 		<br>
+		<a href="../1806web/day01/demo07.html" target="_blank">web01.图片地图</a><br><br>
+		<a href="../1806web/day02/demo03.html" target="_blank">web02.选老婆</a><br><br>
+		<a href="../1806web/day02/demo04.html" target="_blank">web02.表格标签</a><br><br>
+		<a href="../1806web/day02/demo05.html" target="_blank">web02.单元格练习</a><br><br>
+		<a href="../1806web/day02/demo07.html" target="_blank">web02.表单</a><br><br>
+		<a href="../1806web/day02/demo08.html" target="_blank">web02.表单plus</a><br><br>
+	</div>
+</div>
+
+	
+<script type="text/javascript">
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+function showOtherDiv(){
+    if(webDemo.style.display=="block"){
+    	webDemo.style.display="none";
+    }else{
+    	
+    	webDemo.style.display="block";
+    }
+}
+</script>
+</body>
+</html>

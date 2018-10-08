@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New';
+  box-sizing: border-box;
+}
+body {
+  background: #354458;
+  color: #E9E0D6;
+  font-family: 'Courier New';
+  font-size: 17px;
+  line-height: 1em;
+}
+table {
+  color: #5BB12F;
+  box-sizing: border-box;
+  border: 1px solid #E9E0D6;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  color: limegreen;
+}
+td {
+  border: 1px solid #E9E0D6;
+  height: 50px;
+  width: 50px;
+}
+th {
+  color: #E9E0D6;
+  font-weight: normal;
+  height: 50px;
+  width: 50px;
+}
+#container {
+  width: 100%;
+}
+#siatka {
+  margin-top: 30px;
+}
+#form {
+  margin: 5px auto;
+  width: 551px;
+}
+.small-text {
+  font-size: 14px;
+}
+#fireButton {
+  width: 48%;
+  padding: 5px;
+  border: 1px #E9E0D6 solid;
+  background: #354458;
+  color: #E9E0D6;
+  height: 40px;
+  float: right;
+  transition: 0.2s;
+  font-size: 20px;
+}
+#fireButton:hover,
+#fireButton:active,
+#fireButton:focus {
+  outline: none;
+  color: #5BB12F;
+  border: 1px #5BB12F solid;
+}
+#fireCoords {
+  text-transform: uppercase;
+  width: 48%;
+  height: 40px;
+  background: #354458;
+  border: #E9E0D6 solid 1px;
+  padding: 4px;
+  color: #5BB12F;
+  font-style: normal;
+  font-size: 20px;
+  transition: 0.2s;
+}
+#fireCoords:focus,
+#fireCoords:hover {
+  outline: none;
+  border: 1px #5BB12F solid;
+}
+#fireCoords::-webkit-input-placeholder {
+  color: #E9E0D6;
+  font-style: italic;
+  text-transform: none;
+}
+#fireCoords::-moz-placeholder {
+  color: #E9E0D6;
+  font-style: italic;
+  text-transform: none;
+}
+#logScreen {
+  padding: 5px;
+  margin: 20px 5px;
+  font-size: 17px;
+  color: #5BB12F;
+}
+.statki {
+  width: 20%;
+  border: #E9E0D6 solid 1px;
+  padding: 20px;
+  left: 40px;
+  position: absolute;
+  top: 75px;
+  height: 551px;
+}
+ul,
+li {
+  list-style: none;
+}
+li:first-child {
+  font-weight: bold;
+}
+li {
+  margin: 10px;
+}
+/**** MISS AND HIT CLASSES ***/
+.miss {
+  background-color: darkred;
+}
+.hit {
+  background-color: limegreen;
+}
+.crossed {
+  color: #5BB12F;
+  text-decoration: line-through;
+}
+.fix {
+  clear: both;
+}
+.warning {
+  color: #DA4624 !important;
+}
+.info {
+  color: #5BB12F !important;
+}
+/*****************************************/
+@media (max-width: 1056px) {
+  #siatka {
+    margin-top: 10px;
+  }
+  .statki {
+    position: static;
+    width: 551px;
+    padding: 20px;
+    margin: 5px auto;
+    height: auto;
+  }
+  li {
+    float: left;
+    width: 100px;
+  }
+  #logScreen {
+    clear: both;
+    margin-top: 10px;
+  }
+}
+#trash {
+  color: #354458;
+  display: none;
+  font-size: 0.1px;
+}
+/*****************************************/
+@media (max-width: 557px) {
+  #form {
+    margin: 5px auto;
+    width: 551px;
+  }
+  .statki {
+    position: static;
+    width: 331px;
+    padding: 10px;
+    height: auto;
+    margin: 5px auto;
+  }
+  body {
+    font-size: 15px;
+  }
+  td {
+    height: 30px;
+    width: 30px;
+  }
+  th {
+    height: 30px;
+    width: 30px;
+  }
+  #form {
+    margin: 3px auto;
+    width: 331px;
+  }
+  .small-text {
+    font-size: 12px;
+  }
+  #fireButton {
+    padding: 5px;
+    height: 30px;
+    font-size: 16px;
+  }
+  #fireCoords {
+    height: 30px;
+    padding: 4px;
+    font-size: 16px;
+  }
+  #logScreen {
+    font-size: 15px;
+  }
+}

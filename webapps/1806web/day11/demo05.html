@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn1(){
+		alert("元素绑定 "+this+" this代表window。若想元素绑定代表事件源,onclick='fn1(this)',function fn1(btn)(){}");
+	}
+	
+	onload = function(){
+		mybtn.onclick = function(){
+			alert("动态绑定 "+this+" this代表事件源");
+			alert(event.target);
+			alert(event.srcElement);
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="元素绑定事件" onclick="fn1()">	
+<input type="button" value="动态绑定事件" id="mybtn">			
+</body>
+</html>
